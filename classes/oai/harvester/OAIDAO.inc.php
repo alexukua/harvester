@@ -104,7 +104,7 @@ class OAIDAO extends DAO {
 	 * @return OAIRecord
 	 */
 	function &getRecord($recordId) {
-		$result =& $this->retrieve(
+		$result = $this->retrieve(
 			'SELECT	r.*, a.*
 			FROM	records r,
 				archives a
@@ -282,14 +282,14 @@ class OAIDAO extends DAO {
 	 * @return OAIResumptionToken
 	 */
 	function &getToken($tokenId) {
-		$result =& $this->retrieve(
+		$result = $this->retrieve(
 			'SELECT * FROM oai_resumption_tokens WHERE token = ?', $tokenId
 		);
 
 		if ($result->RecordCount() == 0) {
 			$token = null;
 		} else {
-			$row =& $result->getRowAssoc(false);
+			$row = $result->getRowAssoc(false);
 			$token = new OAIResumptionToken($row['token'], $row['record_offset'], unserialize($row['params']), $row['expire']);
 		}
 

@@ -256,7 +256,7 @@ class HarvesterPlugin extends Plugin {
 	 * @param $archive object
 	 * @param $params array Additional parameters to harvester
 	 */
-	function updateIndex(&$archive, $params = array()) {
+	function updateIndex($archive, $params = array()) {
 		// Subclasses should override this method
 	}
 

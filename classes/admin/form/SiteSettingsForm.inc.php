@@ -41,7 +41,7 @@ class SiteSettingsForm extends PKPSiteSettingsForm {
 
 	function execute() {
 		if (parent::execute()) {
-			$site =& Request::getSite();
+			$site = Request::getSite();
 			$site->updateSetting('enableSubmit', $this->getData('enableSubmit')?1:0);
 			$site->updateSetting('disableSubmissions', $this->getData('disableSubmissions')?1:0);
 			$site->updateSetting('theme', $this->getData('theme'));

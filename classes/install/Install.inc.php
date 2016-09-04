@@ -16,8 +16,6 @@
  *  - Update the config file with installation parameters.
  */
 
-// $Id$
-
 
 define('INSTALLER_DEFAULT_SITE_TITLE', 'common.harvester2');
 define('INSTALLER_DEFAULT_MIN_PASSWORD_LENGTH', 6);
@@ -58,7 +56,7 @@ class Install extends PKPInstall {
 		// Add initial site data
 		$locale = $this->getParam('locale');
 		$siteDao =& DAORegistry::getDAO('SiteDAO', $this->dbconn);
-		$site = new Site();
+		$site = $siteDao->newDataObject();
 		$site->setRedirect(0);
 		$site->setMinPasswordLength(INSTALLER_DEFAULT_MIN_PASSWORD_LENGTH);
 		$site->setPrimaryLocale($locale);
@@ -67,6 +65,13 @@ class Install extends PKPInstall {
 		if (!$siteDao->insertSite($site)) {
 			$this->setError(INSTALLER_ERROR_DB, $this->dbconn->errorMsg());
 			return false;
+		}
+
+		// Install email template list and data for each locale
+		$emailTemplateDao =& DAORegistry::getDAO('EmailTemplateDAO');
+		$emailTemplateDao->installEmailTemplates($emailTemplateDao->getMainEmailTemplatesFilename());
+		foreach ($this->installedLocales as $locale) {
+			$emailTemplateDao->installEmailTemplateData($emailTemplateDao->getMainEmailTemplateDataFilename($locale));
 		}
 
 		// Install site settings
@@ -100,29 +105,6 @@ class Install extends PKPInstall {
 		// Install the schema aliases
 		$schemaAliasDao =& DAORegistry::getDAO('SchemaAliasDAO');
 		$schemaAliasDao->installSchemaAliases();
-
-		// Add initial plugin data to versions table
-		$versionDao =& DAORegistry::getDAO('VersionDAO');
-		import('lib.pkp.classes.site.VersionCheck');
-		$categories = PluginRegistry::getCategories();
-		foreach ($categories as $category) {
-			PluginRegistry::loadCategory($category);
-			$plugins = PluginRegistry::getPlugins($category);
-			foreach ($plugins as $plugin) {
-				$versionFile = $plugin->getPluginPath() . '/version.xml';
-
-				if (FileManager::fileExists($versionFile)) {
-					$versionInfo =& VersionCheck::parseVersionXML($versionFile);
-					$pluginVersion = $versionInfo['version'];
-				}  else {
-					$pluginVersion = new Version(
-						1, 0, 0, 0, Core::getCurrentDate(), 1,
-						'plugins.'.$category, basename($plugin->getPluginPath()), '', 0
-					);
-				}
-				$versionDao->insertVersion($pluginVersion, true);
-			}
-		}
 
 		return true;
 	}

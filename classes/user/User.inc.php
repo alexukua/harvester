@@ -29,7 +29,7 @@ class User extends PKPUser {
 	 * @param $name
 	 * @return mixed
 	 */
-	function &getSetting($name) {
+	public function getSetting($name) {
 		$userSettingsDao =& DAORegistry::getDAO('UserSettingsDAO');
 		$setting =& $userSettingsDao->getSetting($this->getData('userId'), $name);
 		return $setting;
