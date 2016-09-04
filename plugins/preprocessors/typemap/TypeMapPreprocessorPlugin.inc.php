@@ -1,29 +1,25 @@
 <?php
 
 /**
- * @file TypeMapPreprocessorPlugin.inc.php
+ * @file LanguageMapPreprocessorPlugin.inc.php
  *
- * @package plugins.preprocessors.typemap
- * @class TypeMapPreprocessorPlugin
+ * @package plugins.preprocessors.languagemap
+ * @class LanguageMapPreprocessorPlugin
  *
- */
+ * Based on OJS 2.0's LanguageMapPreprocessorPlugin.inc.php 
+ *
+ *
+**/
 
 
 import('classes.plugins.PreprocessorPlugin');
 
 class TypeMapPreprocessorPlugin extends PreprocessorPlugin {
-	/** @var $typeCrosswalkFieldNames object */
-	var $typeCrosswalkFieldNames;
+	/** @var $languageCrosswalk object */
+	var $typeCrosswalkFieldIds;
 
 	/** @var $mappingCache */
 	var $mappingCache;
-
-	/**
-	 * Constructor
-	 */
-	function TypeMapPreprocessorPlugin() {
-		parent::PreprocessorPlugin();
-	}
 
 	/**
 	 * Register the plugin.
@@ -32,17 +28,18 @@ class TypeMapPreprocessorPlugin extends PreprocessorPlugin {
 	 */
 	function register($category, $path) {
 		$success = parent::register($category, $path);
-		$this->typeCrosswalkFieldNames = array();
+		$this->typeCrosswalkFieldIds = null;
 		if ($success && $this->isEnabled()) {
-			// Fetch the list of field IDs that the type
+			// Fetch the list of field IDs that the language
 			// crosswalk uses; we will map all languages mentioned
 			// in these fields.
+			$this->typeCrosswalkFieldIds = array();
 			$crosswalkDao =& DAORegistry::getDAO('CrosswalkDAO');
 			$typeCrosswalk =& $crosswalkDao->getCrosswalkByPublicCrosswalkId('type');
 			if ($typeCrosswalk) {
 				$fields =& $typeCrosswalk->getFields();
 				while ($field =& $fields->next()) {
-					$this->typeCrosswalkFieldNames[$field->getSchemaId()][] = $field->getName();
+					$this->typeCrosswalkFieldIds[] = $field->getFieldId();
 					unset($field);
 				}
 			}
@@ -68,8 +65,8 @@ class TypeMapPreprocessorPlugin extends PreprocessorPlugin {
 
 			// Check to see if the cache is outdated.
 			$cacheTime = $cache->getCacheTime();
-			$typemapFile = $this->getPluginPath() . '/typemap-' . ((int) $archive->getArchiveId()) . '.xml';
-			if (file_exists($typemapFile) && $cacheTime !== null && $cacheTime < filemtime($typemapFile)) {
+			$typemap_file = 'typemap-' . $archive->getArchiveId() . '.xml';
+			if ($cacheTime !== null && $cacheTime < filemtime($this->getPluginPath() . '/' . $typemap_file)) {
 				$cache->flush();
 			}
 		}
@@ -87,12 +84,10 @@ class TypeMapPreprocessorPlugin extends PreprocessorPlugin {
 		if (!isset($mappings)) {
 			// Load the mapping list.
 			$xmlDao = new XMLDAO();
-			$typemapFile = $this->getPluginPath() . '/typemap-' . ((int) $cache->cacheId) . '.xml';
-			if (file_exists($typemapFile)) {
-				$data = $xmlDao->parseStruct($typemapFile, array('mapping'));
-			} else {
-				$data = array();
-			}
+			// $cache->cacheId has the same value as the archive ID (but ask Alec to verify this is always
+			// true in this context)
+			$typemap_file = "typemap-" . $cache->cacheId . ".xml";
+			$data = $xmlDao->parseStruct($this->getPluginPath() . '/' . $typemap_file, array('mapping'));
 
 			if (isset($data['mapping'])) {
 				foreach ($data['mapping'] as $mapping) {
@@ -140,26 +135,60 @@ class TypeMapPreprocessorPlugin extends PreprocessorPlugin {
 	}
 
 	/**
-	 * Preprocess a record.
-	 * @param $record Record Record object ready for insertion
-	 * @param $archive Archive
- 	 * @param $schema Schema
-	 * @return boolean Hook callback status
+	 * This callback implements the actual map and is called before an
+	 * entry is inserted.
+	 * @param $archive object
+	 * @param $record object
+	 * @param $field object
+	 * @param $value string
+	 * @param $attributes array
+	 * @return boolean
 	 */
-	function preprocessRecord(&$record, &$archive, &$schema) {
-		if (isset($this->typeCrosswalkFieldNames[$schema->getSchemaId()])) {
-			$doc = new DOMDocument();
-			$doc->loadXML($record->getContents());
-			foreach($this->typeCrosswalkFieldNames[$schema->getSchemaId()] as $fieldName) {
-				foreach ($doc->getElementsByTagName($fieldName) as $element) {
-					$element->nodeValue = $this->mapType($archive, $element->nodeValue);
-				}
-			}
-			$record->setContents($doc->saveXML());
+	function preprocessEntry(&$archive, &$record, &$field, &$value, &$attributes) {
+		if (is_array($this->typeCrosswalkFieldIds) && in_array($field->getFieldId(), $this->typeCrosswalkFieldIds)) {
+			$value = $this->mapType($archive, $value);
 		}
 		return false;
 	}
 
+	/**
+	 * Return the set of management verbs supported by this plugin for the
+	 * administration interface.
+	 * @return array
+	 */
+	function getManagementVerbs() {
+		if ($this->isEnabled()) return array(
+			array('disable', __('common.disable'))
+		);
+		else return array(
+			array('enable', __('common.enable'))
+		);
+	}
+
+	/**
+	 * Perform a management function on this plugin.
+	 * @param $verb string
+	 * @param $params array
+	 */
+	function manage($verb, $params) {
+		switch ($verb) {
+			case 'enable':
+				$this->updateSetting('enabled', true);
+				break;
+			case 'disable':
+				$this->updateSetting('enabled', false);
+				break;
+		}
+		Request::redirect('admin', 'plugins');
+	}
+
+	/**
+	 * Determine whether or not this plugin is currently enabled.
+	 * @return boolean
+	 */
+	function isEnabled() {
+		return $this->getSetting('enabled');
+	}
 }
 
 ?>

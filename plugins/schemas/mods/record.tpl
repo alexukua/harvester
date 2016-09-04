@@ -1,5 +1,5 @@
 {**
- * record.tpl
+ * plugins/schemas/mods/record.tpl
  *
  * Copyright (c) 2005-2012 Alec Smecher and John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
@@ -19,7 +19,7 @@
 <a href="{url page="browse" op="archiveInfo" path=$archive->getArchiveId()}" class="action">{translate key="browse.archiveInfo"}</a><br/>&nbsp;
 
 <h3>{translate key="plugins.schemas.mods.metadata"}</h3>
-<table width="100%" class="listing">
+<table width="80%" class="listing">
 	<tr>
 		<td colspan="2" class="headseparator">&nbsp;</td>
 	</tr>
@@ -33,7 +33,7 @@
 	{foreach from="title"|to_array:"subTitle":"partNumber":"partName":"nonSort" item=nodeName}	
 		{if $contents.$nodeName}
 			<tr valign="top">
-				<td class="label">{if $nodeName}{translate key="plugins.schemas.mods.fields.$nodeName.name"}{else}&mdash;{/if}</td>
+				<td class="label">{translate key="plugins.schemas.mods.fields.$nodeName.name}</td>
 				<td class="value">{$contents.$nodeName|escape|nl2br}</td>
 			</tr>
 		{/if}
@@ -45,7 +45,7 @@
 		<td class="label">{translate key="plugins.schemas.mods.names"}</td>
 		<td class="value">
 			{foreach from=$contents.names item=name name=names}
-				{$name.namePart|escape|nl2br}
+				{$name.namePart}
 				{foreach from=$name.roles item=role name=roles}
 					{if $smarty.foreach.roles.first}({/if}{$role.term}{if $smarty.foreach.roles.last}){else}, {/if}
 				{/foreach}
@@ -56,7 +56,7 @@
 	{foreach from="typeOfResourceCollection"|to_array:"typeOfResourceManuscript" item=nodeName}	
 		{if $contents.$nodeName}
 			<tr valign="top">
-				<td class="label">{if $nodeName}{translate key="plugins.schemas.mods.fields.$nodeName.name"}{else}&mdash;{/if}</td>
+				<td class="label">{translate key="plugins.schemas.mods.fields.$nodeName.name}</td>
 				<td class="value">{$contents.$nodeName|escape|nl2br}</td>
 			</tr>
 		{/if}
@@ -64,7 +64,7 @@
 	{foreach from="publisher"|to_array:"edition":"issuance":"frequency" item=nodeName}	
 		{if $contents.originInfo.$nodeName}
 			<tr valign="top">
-				<td class="label">{if $nodeName}{translate key="plugins.schemas.mods.fields.$nodeName.name"}{else}&mdash;{/if}</td>
+				<td class="label">{translate key="plugins.schemas.mods.fields.$nodeName.name}</td>
 				<td class="value">{$contents.originInfo.$nodeName|escape|nl2br}</td>
 			</tr>
 		{/if}
@@ -72,7 +72,7 @@
 	{foreach from="dateIssued"|to_array:"dateCreated":"dateCaptured":"dateValid":"dateModified":"copyrightDate":"dateOther" item=nodeName}	
 		{if $contents.originInfo.$nodeName}
 			<tr valign="top">
-				<td class="label">{if $nodeName}{translate key="plugins.schemas.mods.fields.$nodeName.name"}{else}&mdash;{/if}</td>
+				<td class="label">{translate key="plugins.schemas.mods.fields.$nodeName.name}</td>
 				<td class="value">{$contents.originInfo.$nodeName.value|escape|nl2br} ({$contents.originInfo.$nodeName.encoding|escape|nl2br})</td>
 			</tr>
 		{/if}
@@ -92,8 +92,8 @@
 	{foreach from="form"|to_array:"reformattingQuality":"internetMediaType":"extent":"digitalOrigin":"note":"abstract":"genre":"tableOfContents":"targetAudience":"classification":"accessCondition":"extension":"subjectTopic":"subjectGeographic":"subjectTemporal":"subjectGeographicCode":"subjectGenre":"subjectOccupation" item=nodeName}	
 		{if $contents.$nodeName}
 			<tr valign="top">
-				<td class="label">{if $nodeName}{translate key="plugins.schemas.mods.fields.$nodeName.name"}{else}&mdash;{/if}</td>
-				<td class="value">{if $nodeName == 'abstract'}{$contents.$nodeName|trim|nl2br|strip_unsafe_html}{else}{$contents.$nodeName|escape|nl2br}{/if}</td>
+				<td class="label">{translate key="plugins.schemas.mods.fields.$nodeName.name}</td>
+				<td class="value">{$contents.$nodeName|escape|nl2br}</td>
 			</tr>
 		{/if}
 	{/foreach}
@@ -107,7 +107,7 @@
 		{foreach from="physicalLocation"|to_array:"shelfLocator":"holdingExternal":"url" item=nodeName}
 			{if $location.$nodeName}
 				<tr valign="top">
-					<td class="label">{if $nodeName}{translate key="plugins.schemas.mods.fields.$nodeName.name"}{else}&mdash;{/if}</td>
+					<td class="label">{translate key="plugins.schemas.mods.fields.$nodeName.name"}</td>
 					<td class="value">{$location.$nodeName|escape|nl2br}</td>
 				</tr>
 			{/if}

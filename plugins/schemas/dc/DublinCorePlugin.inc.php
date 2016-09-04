@@ -78,7 +78,7 @@ class DublinCorePlugin extends SchemaPlugin {
 	 * @var $type SORT_ORDER_TYPE_...
 	 * @return mixed
 	 */
-	function getFieldValue(&$record, $name, $type) {
+	function getFieldValue($record, $name, $type) {
 		$fieldValue = null;
 		$parsedContents = $record->getParsedContents();
 		if (isset($parsedContents[$name])) switch ($type) {
@@ -143,10 +143,7 @@ class DublinCorePlugin extends SchemaPlugin {
 	function getTitle(&$record) {
 		$parsedContents =& $record->getParsedContents();
 		if (isset($parsedContents['title'])) {
-			foreach ($parsedContents['title'] as $title) {
-				if ($title) return $title;
-				unset($title);
-			}
+			return array_shift($parsedContents['title']);
 		}
 		return null;
 	}
@@ -156,8 +153,8 @@ class DublinCorePlugin extends SchemaPlugin {
 	 * @param $record object
 	 * @return string
 	 */
-	function getIdentifier(&$record) {
-		$parsedContents =& $record->getParsedContents();
+	function getIdentifier($record) {
+		$parsedContents = $record->getParsedContents();
 		if (isset($parsedContents['identifier'])) {
 			return array_shift($parsedContents['identifier']);
 		}

@@ -1,5 +1,5 @@
 {**
- * record.tpl
+ * plugins/schemas/etdms/record.tpl
  *
  * Copyright (c) 2005-2012 Alec Smecher and John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
@@ -18,7 +18,7 @@
 
 <a href="{url page="browse" op="archiveInfo" path=$archive->getArchiveId()}" class="action">{translate key="browse.archiveInfo"}</a><br/>&nbsp;
 
-<table width="100%" class="listing">
+<table width="80%" class="listing">
 	<tr>
 		<td colspan="3" class="headseparator">&nbsp;</td>
 	</tr>
@@ -31,15 +31,13 @@
 	</tr>
 	{foreach from=$record->getParsedContents() item=entry key=name name=entries}
 		<tr valign="top">
-			<td>{if $name}{translate key="plugins.schemas.etdms.fields.$name.name"}{else}&mdash;{/if}</td>
+			<td>{translate key="plugins.schemas.etdms.fields.$name.name"}</td>
 			<td>
 				{foreach from=$entry item=value}
 					{if $name == 'identifier'}
 						<a href="{$value|escape}">{$value|escape|default:"&mdash;"}</a>
-					{elseif $name == 'abstract' || $name == 'description'}
-						{$value|trim|nl2br|strip_unsafe_html|default:"&mdash;"}
 					{else}
-						{$value|escape|default:"&mdash;"}
+						{$value|trim|nl2br|strip_unsafe_html|default:"&mdash;"}
 					{/if}<br/>
 				{/foreach}
 			</td>

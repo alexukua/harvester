@@ -18,8 +18,8 @@
 function handleArchiveSelect() {
 	// Specific fields are currently displayed; the field set should be
 	// updated.
-	document.search.action = "{/literal}{url page="misearch" escape="false"}{literal}";
-	document.search.submit();
+	document.getElementById('search').action = "{/literal}{url page="misearch" escape="false"}{literal}";
+	document.getElementById('search').submit();
 	return true;
 }
 
@@ -27,7 +27,7 @@ function handleArchiveSelect() {
 {/literal}
 </script>
 
-<form name="search" action="{url op="results"}">
+<form method="post" name="search" action="{url op="results"}">
 <input type="hidden" name="isAdvanced" value="1"/>
 
 <table class="data" width="100%">
@@ -82,7 +82,7 @@ function handleArchiveSelect() {
 						{/if}{/foreach}
 					</select>
 				</td>
-			
+
 		{else}{* FIELD_TYPE_TEXT *}
 			{assign var=crosswalkValueVar value=crosswalk-$crosswalkId}
 			<tr valign="top">
@@ -104,7 +104,7 @@ function handleArchiveSelect() {
 			</tr>
 			<tr valign="top">
 				<td class="value">{translate key="common.until"}</td>
-				<td class="value">{html_select_date prefix="field-$fieldId-to" time=$fieldValueToVar|get_value|default:"--" all_extra="class=\"selectMenu\"" year_empty="" month_empty="" day_empty="" start_year="1900" end_year="+10"}</td>
+				<td class="value"{html_select_date prefix="field-$fieldId-to" time=$fieldValueToVar|get_value|default:"--" all_extra="class=\"selectMenu\"" year_empty="" month_empty="" day_empty="" start_year="1900" end_year="+10"}</td>
 			</tr>
 		{elseif $fieldType == FIELD_TYPE_SELECT}
 			{assign var=fieldValueVar value=field-$fieldId}
@@ -121,7 +121,7 @@ function handleArchiveSelect() {
 						{/if}{/foreach}
 					</select>
 				</td>
-			
+
 		{else}
 			<tr valign="top">
 				<td class="label"><label for="field-{$fieldId}">{$field->getDisplayName()|escape}</label></td>

@@ -133,13 +133,12 @@ class OAIHarvesterPlugin extends HarvesterPlugin {
 	 * @param $archive object
 	 * @param $params array
 	 */
-	function updateIndex(&$archive, $params = array()) {
+	public function updateIndex($archive, $params = array()) {
 		$this->import('OAIHarvester');
 
 		PluginRegistry::loadCategory('schemas');
 
 		$oaiHarvester = new OAIHarvester($archive);
-
 		// If necessary, save the set list.
 		if (isset($params['set'])) {
 			if (!is_array($params['set'])) $params['set'] = array($params['set']);

@@ -185,7 +185,8 @@ class ModsPlugin extends SchemaPlugin {
 		}
 
 		// Handle originInfo
-		for ($i=0; $originNode =& $modsNode->getChildByName(array('originInfo', 'mods:originInfo', 'oai_mods:originInfo'), $i); $i++) {
+		$originNode =& $modsNode->getChildByName(array('originInfo', 'mods:originInfo', 'oai_mods:originInfo'));
+		if (isset($originNode)) {
 			foreach ($originNode->getChildren() as $child) {
 				$name = $child->getName(false);
 				switch ($name) {

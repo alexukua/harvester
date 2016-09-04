@@ -1,5 +1,5 @@
 {**
- * record.tpl
+ * plugins/schemas/marc/record.tpl
  *
  * Copyright (c) 2005-2012 Alec Smecher and John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
@@ -13,12 +13,12 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<h3>{$record->getTitle()|escape|default:"&mdash;"}</h3>
+<h3>{$record->getTitle()|escape}</h3>
 <h4>{$archive->getTitle()|escape}</h4>
 
 <a href="{url page="browse" op="archiveInfo" path=$archive->getArchiveId()}" class="action">{translate key="browse.archiveInfo"}</a><br/>&nbsp;
 
-<table width="100%" class="listing">
+<table width="80%" class="listing">
 	<tr>
 		<td colspan="3" class="headseparator">&nbsp;</td>
 	</tr>
@@ -31,9 +31,9 @@
 	</tr>
 	{foreach from=$record->getParsedContents() item=entry key=name name=entries}
 		<tr valign="top">
-			<td>{if $name}{translate key="plugins.schemas.marc.fields.$name.name"}{else}&mdash;{/if}</td>
+			<td>{translate key="plugins.schemas.marc.fields.$name.name"}</td>
 			<td>
-				{foreach from=$entry item=i1val key=i1}{foreach from=$i1val item=i2val key=i2}{foreach from=$i2val item=codeval key=code}{foreach from=$codeval item=value}{if $name == '520'}{$value|trim|nl2br|strip_unsafe_html|default:"&mdash;"}{else}{$value|escape|default:"&mdash;"}{/if}<br/>{/foreach}{/foreach}{/foreach}{/foreach}
+				{foreach from=$entry item=i1val key=i1}{foreach from=$i1val item=i2val key=i2}{foreach from=$i2val item=codeval key=code}{foreach from=$codeval item=value}{$value|escape|default:"&mdash;"}<br/>{/foreach}{/foreach}{/foreach}{/foreach}
 			</td>
 		</tr>
 		<tr>

@@ -1,5 +1,5 @@
 {**
- * searchFormElementForm.tpl
+ * plugins/generic/zendSearch/searchFormElementForm.tpl
  *
  * Copyright (c) 2005-2012 Alec Smecher and John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
@@ -36,7 +36,7 @@ function changeElementType() {
 
 <br/>
 
-<form name="searchFormElement" method="post" action="{url op="updateSearchFormElement"}">
+<form id="searchFormElement" method="post" action="{url op="updateSearchFormElement"}">
 {if $searchFormElementId}
 <input type="hidden" name="searchFormElementId" value="{$searchFormElementId|escape}" />
 {/if}

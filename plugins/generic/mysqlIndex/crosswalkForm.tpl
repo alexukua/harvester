@@ -1,5 +1,5 @@
 {**
- * crosswalkForm.tpl
+ * plugins/generic/mysqlIndex/crosswalkForm.tpl
  *
  * Copyright (c) 2005-2012 Alec Smecher and John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
@@ -21,8 +21,8 @@
 <!--
 function refreshForm() {
 {/literal}
-	document.crosswalkForm.action='{url}';
-	document.crosswalkForm.submit();
+	document.getElementById('crosswalkForm').action='{url}';
+	document.getElementById('crosswalkForm').submit();
 {literal}
 }
 -->
@@ -32,7 +32,7 @@ function refreshForm() {
 <br />
 
 <div id="crosswalkForm">
-<form name="crosswalkForm" method="post" action="{url op="updateCrosswalk"}">
+<form id="crosswalkForm" method="post" action="{url op="updateCrosswalk"}">
 {if $crosswalkId}
 <input type="hidden" name="crosswalkId" value="{$crosswalkId}" />
 {/if}

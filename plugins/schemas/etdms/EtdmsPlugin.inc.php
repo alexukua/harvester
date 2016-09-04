@@ -147,10 +147,7 @@ class EtdmsPlugin extends SchemaPlugin {
 	function getTitle(&$record) {
 		$parsedContents =& $record->getParsedContents();
 		if (isset($parsedContents['title'])) {
-			foreach ($parsedContents['title'] as $title) {
-				if ($title) return $title;
-				unset($title);
-			}
+			return array_shift($parsedContents['title']);
 		}
 		return null;
 	}

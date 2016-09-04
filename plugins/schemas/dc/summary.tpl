@@ -1,5 +1,5 @@
 {**
- * summary.tpl
+ * plugins/schemas/dc/summary.tpl
  *
  * Copyright (c) 2005-2012 Alec Smecher and John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
@@ -8,7 +8,7 @@
  *
  * $Id$
  *}
-<span class="title">{$record->getTitle()|escape|truncate:90:"...":false:false:false|default:"&mdash;"}</span><br />
+<span class="title">{$record->getTitle()|strip_unsafe_html|truncate:90:"...":false:false:false|default:"&mdash"}</span><br />
 <div class="recordContents">
 	<span class="author">{$record->getAuthorString()|escape|default:"&mdash;"}</span><br />
 	{assign var=parsedContents value=$record->getParsedContents()}

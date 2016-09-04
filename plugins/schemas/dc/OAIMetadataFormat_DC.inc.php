@@ -21,8 +21,8 @@ class OAIMetadataFormat_DC extends OAIMetadataFormat {
 	/**
 	 * @see OAIMetadataFormat#toXml
 	 */
-	function toXml(&$oaiRecord, $format = null) {
-		$record =& $oaiRecord->getData('record');
+	function toXml($oaiRecord, $format = null) {
+		$record = $oaiRecord->getData('record');
 
 		switch ($format) {
 			case 'oai_dc':

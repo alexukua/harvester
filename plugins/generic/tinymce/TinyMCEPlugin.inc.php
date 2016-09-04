@@ -72,7 +72,6 @@ class TinyMCEPlugin extends GenericPlugin {
 			case 'user/saveProfile':
 			case 'user/register':
 			case 'admin/createUser':
-			case 'admin/editUser':
 			case 'admin/updateUser':
 				$fields[] = 'mailingAddress';
 				$fields[] = 'biography';
@@ -118,6 +117,7 @@ class TinyMCEPlugin extends GenericPlugin {
 			</script>
 			<script language="javascript" type="text/javascript">
 				tinyMCE.init({
+					entity_encoding : "raw",
 					plugins : "paste,jbimages,fullscreen",
 					mode : "exact",
 					language : "' . String::substr(AppLocale::getLocale(), 0, 2) . '",
