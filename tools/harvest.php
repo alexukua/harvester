@@ -36,7 +36,7 @@ class harvest extends CommandLineTool {
 		$this->firstParam = array_shift($argv);
 		$archiveDao =& DAORegistry::getDAO('ArchiveDAO');
 		if ($this->firstParam === 'all') {
-			$this->archives =& $archiveDao->getArchives();
+			$this->archives = $archiveDao->getArchives();
 		}
 		else {
 			$archive =& $archiveDao->getArchive((int) $this->firstParam, false);
