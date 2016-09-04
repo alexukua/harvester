@@ -38,13 +38,17 @@ class LanguageMapPreprocessorPlugin extends PreprocessorPlugin {
 			// crosswalk uses; we will map all languages mentioned
 			// in these fields.
 			$this->languageCrosswalkFieldIds = array();
-			$crosswalkDao =& DAORegistry::getDAO('CrosswalkDAO');
-			$languageCrosswalk =& $crosswalkDao->getCrosswalkByPublicCrosswalkId('language');
-			if ($languageCrosswalk) {
-				$fields =& $languageCrosswalk->getFields();
-				while ($field =& $fields->next()) {
-					$this->languageCrosswalkFieldIds[] = $field->getFieldId();
-					unset($field);
+			$plugins = PluginRegistry::getAllPlugins();
+			$plugin = $plugins['mysqlindexplugin'];
+			if ($plugin->getEnabled()) {
+				$crosswalkDao =& DAORegistry::getDAO('CrosswalkDAO');
+				$languageCrosswalk =& $crosswalkDao->getCrosswalkByPublicCrosswalkId('language');
+				if ($languageCrosswalk) {
+					$fields =& $languageCrosswalk->getFields();
+					while ($field =& $fields->next()) {
+						$this->languageCrosswalkFieldIds[] = $field->getFieldId();
+						unset($field);
+					}
 				}
 			}
 		}

@@ -26,21 +26,25 @@ class TypeMapPreprocessorPlugin extends PreprocessorPlugin {
 	 * @param $category string
 	 * @param $path string
 	 */
-	function register($category, $path) {
+	public function register($category, $path) {
 		$success = parent::register($category, $path);
 		$this->typeCrosswalkFieldIds = null;
 		if ($success && $this->isEnabled()) {
 			// Fetch the list of field IDs that the language
 			// crosswalk uses; we will map all languages mentioned
 			// in these fields.
-			$this->typeCrosswalkFieldIds = array();
-			$crosswalkDao =& DAORegistry::getDAO('CrosswalkDAO');
-			$typeCrosswalk =& $crosswalkDao->getCrosswalkByPublicCrosswalkId('type');
-			if ($typeCrosswalk) {
-				$fields =& $typeCrosswalk->getFields();
-				while ($field =& $fields->next()) {
-					$this->typeCrosswalkFieldIds[] = $field->getFieldId();
-					unset($field);
+			$plugins = PluginRegistry::getAllPlugins();
+			$plugin = $plugins['mysqlindexplugin'];
+			if ($plugin->getEnabled()) {
+				$this->typeCrosswalkFieldIds = array();
+				$crosswalkDao =& DAORegistry::getDAO('CrosswalkDAO');
+				$typeCrosswalk = $crosswalkDao->getCrosswalkByPublicCrosswalkId('type');
+				if ($typeCrosswalk) {
+					$fields =& $typeCrosswalk->getFields();
+					while ($field =& $fields->next()) {
+						$this->typeCrosswalkFieldIds[] = $field->getFieldId();
+						unset($field);
+					}
 				}
 			}
 		}
