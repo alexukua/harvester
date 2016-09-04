@@ -28,7 +28,7 @@ class AdminLanguagesHandler extends AdminHandler {
 		$this->validate();
 		$this->setupTemplate(true);
 
-		$site =& $request->getSite();
+		$site = $request->getSite();
 
 		$templateMgr =& TemplateManager::getManager();
 		$templateMgr->assign('localeNames', AppLocale::getAllLocales());
@@ -38,6 +38,8 @@ class AdminLanguagesHandler extends AdminHandler {
 		foreach (AppLocale::getAllLocales() as $key => $name) {
 			$localesComplete[$key] = AppLocale::isLocaleComplete($key);
 		}
+
+
 		$templateMgr->assign('localesComplete', $localesComplete);
 
 		$templateMgr->assign('installedLocales', $site->getInstalledLocales());

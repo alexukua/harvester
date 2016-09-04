@@ -13,6 +13,9 @@
  *
  */
 
+// $Id$
+
+
 import('lib.pkp.classes.site.Version');
 import('lib.pkp.classes.site.VersionDAO');
 import('lib.pkp.classes.site.VersionCheck');

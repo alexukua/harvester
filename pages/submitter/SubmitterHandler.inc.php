@@ -103,7 +103,7 @@ class SubmitterHandler extends Handler {
 
 		if (!$dataModified && $archiveForm->validate()) {
 			$archiveForm->execute();
-			Request::redirect('submitter');
+			Request::redirect('submitter', $archiveId);
 
 		} else {
 			$archiveForm->display();

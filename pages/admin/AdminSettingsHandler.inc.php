@@ -9,7 +9,7 @@
  * @package pages.admin
  * @class AdminSettingsHandler
  *
- * Handle requests for changing site admin settings. 
+ * Handle requests for changing site admin settings.
  *
  */
 
@@ -17,57 +17,64 @@
 
 import('pages.admin.AdminHandler');
 
-class AdminSettingsHandler extends AdminHandler {
+class AdminSettingsHandler extends AdminHandler
+{
 
-	/**
-	 * Display form to modify site settings.
-	 */
-	function settings() {
-		$this->validate();
-		$this->setupTemplate(true);
+    /**
+     * Display form to modify site settings.
+     */
+    function settings()
+    {
+        $this->validate();
+        $this->setupTemplate(true);
 
-		import('classes.admin.form.SiteSettingsForm');
+        import('classes.admin.form.SiteSettingsForm');
 
-		$settingsForm = new SiteSettingsForm();
-		$settingsForm->initData();
-		$settingsForm->display();
-	}
+        $settingsForm = new SiteSettingsForm();
+        $settingsForm->initData();
+        $settingsForm->display();
+    }
 
-	/**
-	 * Validate and save changes to site settings.
-	 * @param $args array
-	 * @param $request object
-	 */
-	function saveSettings($args, &$request) {
-		$this->validate();
-		$this->setupTemplate(true);
+    /**
+     * Validate and save changes to site settings.
+     * @param $args array
+     * @param $request object
+     */
+    function saveSettings($args, &$request)
+    {
 
-		import('classes.admin.form.SiteSettingsForm');
+        $this->validate();
+        $this->setupTemplate(true);
 
-		$settingsForm = new SiteSettingsForm();
-		$settingsForm->readInputData();
 
-		$editData = false;
+        import('classes.admin.form.SiteSettingsForm');
 
-		if ($request->getUserVar('uploadStyleSheet')) {
-			if ($settingsForm->uploadStyleSheet('styleSheet')) {
-				$editData = true;
-			} else {
-				$settingsForm->addError('styleSheet', __('admin.settings.styleSheet.invalid'));
-			}
-		} elseif ($request->getUserVar('deleteStyleSheet')) {
-			$editData = true;
-			$settingsForm->deleteImage('styleSheet');
-		} elseif ($request->getUserVar('uploadCustomLogo')) {
-			if ($settingsForm->uploadImage('customLogo')) {
-				$editData = true;
-			} else {
-				$settingsForm->addError('customLogo', __('admin.settings.customLogo.invalid'));
-			}
-		} elseif ($request->getUserVar('deleteCustomLogo')) {
-			$editData = true;
-			$settingsForm->deleteImage('customLogo');
-		}
+        $settingsForm = new SiteSettingsForm();
+
+
+        $settingsForm->readInputData();
+
+        $editData = false;
+
+        if ($request->getUserVar('uploadStyleSheet')) {
+            if ($settingsForm->uploadStyleSheet('styleSheet')) {
+                $editData = true;
+            } else {
+                $settingsForm->addError('styleSheet', __('admin.settings.styleSheet.invalid'));
+            }
+        } elseif ($request->getUserVar('deleteStyleSheet')) {
+            $editData = true;
+            $settingsForm->deleteImage('styleSheet');
+        } elseif ($request->getUserVar('uploadCustomLogo')) {
+            if ($settingsForm->uploadImage('customLogo')) {
+                $editData = true;
+            } else {
+                $settingsForm->addError('customLogo', __('admin.settings.customLogo.invalid'));
+            }
+        } elseif ($request->getUserVar('deleteCustomLogo')) {
+            $editData = true;
+            $settingsForm->deleteImage('customLogo');
+        }
 
 		if (!$editData && $settingsForm->validate()) {
 			$settingsForm->execute();
