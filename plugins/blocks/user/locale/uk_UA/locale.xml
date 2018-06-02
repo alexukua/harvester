@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+
+<!--
+  * locale.xml
+  *
+  * Copyright (c) 2005-2012 Alec Smecher and John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localization strings for the en_US (U.S. English) locale.
+  *
+  * $Id$
+  -->
+ 
+<locale name="uk_UA" full_name="Українська">
+	<message key="plugins.block.user.displayName">Блок користувача</message>
+	<message key="plugins.block.user.description">This plugin provides sidebar user account tools (e.g. login, logout, profile link, etc).</message>
+	<message key="plugins.block.user.loggedInAs">Ви зайшли як...</message>
+	<message key="plugins.block.user.myProfile">Мій профіль</message>
+	<message key="plugins.block.user.logout">Вийти</message>
+	<message key="plugins.block.user.signOutAsUser">Вийти як користувач</message>
+	<message key="plugins.block.user.rememberMe">Запам'ятати мене</message>
+</locale>

@@ -6,3 +6,4 @@ config.inc.php
 .htaccess
 .idea/
 cache
+new_harvester

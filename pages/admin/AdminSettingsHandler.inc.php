@@ -76,15 +76,17 @@ class AdminSettingsHandler extends AdminHandler
             $settingsForm->deleteImage('customLogo');
         }
 
-		if (!$editData && $settingsForm->validate()) {
-			$settingsForm->execute();
-			import('lib.pkp.classes.notification.NotificationManager');
-			$notificationManager = new NotificationManager();
-			$notificationManager->createTrivialNotification('notification.notification', 'common.changesSaved');
-			$request->redirect(null, 'index');
-		}
-		$settingsForm->display();
-	}
+        if (!$editData && $settingsForm->validate()) {
+            $settingsForm->execute();
+
+            import('classes.notification.NotificationManager');
+
+            $notificationManager = new NotificationManager();
+            $notificationManager->createTrivialNotification('notification.notification', 'common.changesSaved');
+            $request->redirect(null, 'index');
+        }
+        $settingsForm->display();
+    }
 }
 
 ?>

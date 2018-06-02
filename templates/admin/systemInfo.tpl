@@ -1,7 +1,7 @@
 {**
  * systemInfo.tpl
  *
- * Copyright (c) 2005-2012 Alec Smecher and John Willinsky
+ * Copyright (c) 2005-2010 Alec Smecher and John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * Display system information.
@@ -66,6 +66,7 @@
 <br />
 <div id="systemConfiguration">
 <h3>{translate key="admin.systemConfiguration"}</h3>
+<a class="action" href="{url op="editSystemConfig"}">{translate key="common.edit"}</a>
 <p>{translate key="admin.systemConfigurationDescription"}</p>
 
 {foreach from=$configData key=sectionName item=sectionData}
@@ -97,6 +98,6 @@
 {/foreach}
 </table>
 
-<a href="{url op="phpinfo"}" target="_blank">{translate key="admin.phpInfo"}</a>
+<a href="{url op="phpInfo"}" target="_blank">{translate key="admin.phpInfo"}</a>
 </div>
 {include file="common/footer.tpl"}

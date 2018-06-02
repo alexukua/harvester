@@ -321,7 +321,7 @@
 			<search_description>Liszt, hosted by Topica, is a free service that allows you to find, manage and participate in email lists and discussion groups in Cognitive science.</search_description>
 			<url>http://www.liszt.com/dir/?cid=1564</url>
 			<search_url>http://www.liszt.com/search/?search_type=cat&amp;query={$formKeywords}</search_url>
-			
+
 		</search>
 	</context>
 	<context>

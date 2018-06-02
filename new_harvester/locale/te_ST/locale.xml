@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../locale.dtd">
+
+<!--
+  * locale.xml
+  *
+  * Copyright (c) 2005-2012 Alec Smecher and John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * Localization strings for the te_ST (Test Loçale) locale.
+  *
+  * $Id$
+  -->
+
+<locale name="te_ST" full_name="Test Loçale">
+	<message key="common.changesSaved">Ýóür çhåñgèþ håvè bèèñ þåvèð.</message>
+	<message key="common.language">Låñgüågè</message>
+	<message key="common.languages">Låñgüågèþ</message>
+	<message key="common.notApplicable">Ñót Æpplîçåblè</message>
+	<message key="common.harvester2">Hårvèþtèr2</message>
+	<message key="common.search">ßèårçh</message>
+	<message key="common.refresh">Rèfrèþh</message>
+	<message key="common.close">Çlóþè</message>
+	<message key="common.delete">Ðèlètè</message>
+	<message key="common.yes">Ýèþ</message>
+	<message key="common.no">Ñó</message>
+	<message key="common.on">Òñ</message>
+	<message key="common.add">Æðð</message>
+	<message key="common.off">Òff</message>
+	<message key="common.edit">Éðît</message>
+	<message key="common.manage">Måñågè</message>
+	<message key="common.error.databaseError">Æ ðåtåbåþè èrrór håþ óççürrèð: {$error}</message>
+	<message key="common.mailingAddress">Måîlîñg Æððrèþþ</message>
+	<message key="common.save">ßåvè</message>
+	<message key="common.cancel">Çåñçèl</message>
+	<message key="common.requiredField">* Ðèñótèþ rèqüîrèð fîèlð</message>
+	<message key="common.action">Æçtîóñ</message>
+	<message key="common.from">Fróm</message>
+	<message key="common.until">Üñtîl</message>
+	<message key="common.none">Ñóñè</message>
+	<message key="common.default">Ðèfåült</message>
+	<message key="common.enable">Éñåblè</message>
+	<message key="common.disable">Ðîþåblè</message>
+	<message key="navigation.home">Hómè</message>
+	<message key="navigation.help">Hèlp</message>
+	<message key="navigation.about">Æbóüt</message>
+	<message key="navigation.search">ßèårçh</message>
+	<message key="navigation.browse">Brówþè</message>
+	<message key="navigation.login">Lóg Îñ</message>
+	<message key="navigation.content">Çóñtèñt</message>
+	<message key="navigation.loggedInAs">Ýóü årè lóggèð îñ åþ...</message>
+	<message key="navigation.administration">Æðmîñîþtråtîóñ</message>
+	<message key="navigation.logout">Lóg Òüt</message>
+	<message key="navigation.addArchive">Æðð Ærçhîvè</message>
+	<message key="navigation.previousPage"><![CDATA[<<]]></message>
+	<message key="navigation.nextPage"><![CDATA[>>]]></message>
+	<message key="navigation.items">{$from} - {$to} óf {$total} Îtèmþ</message>
+	<message key="harvester.error.unknownMetadataField">Æñ üñkñówñ mètåðåtå fîèlð {$name} wåþ èñçóüñtèrèð.</message>
+	<message key="installer.harvester2Installation">PKP Hårvèþtèr2 Îñþtållåtîóñ</message>
+	<message key="installer.harvester2Upgrade">Hårvèþtèr2 Üpgråðè</message>
+	<message key="installer.installationInstructions"><![CDATA[<h4>PKP Hårvèþtèr2 Vèrþîóñ {$version}</h4>
+
+<p>Thåñk ýóü fór ðówñlóåðîñg thè Püblîç Kñówlèðgè Prójèçt'þ <strong>Hårvèþtèr2</strong>. Bèfórè próçèèðîñg, plèåþè rèåð thè <a href="{$baseUrl}/docs/README">RÉÆÐMÉ</a> fîlè îñçlüðèð wîth thîþ þóftwårè. Fór mórè îñfórmåtîóñ åbóüt thè Püblîç Kñówlèðgè Prójèçt åñð îtþ þóftwårè prójèçtþ, plèåþè vîþît thè <a href="http://pkp.sfu.ca/" target="_blank">PKP wèb þîtè</a>. Îf ýóü håvè büg rèpórtþ ór tèçhñîçål þüppórt îñqüîrîèþ åbóüt Hårvèþtèr2, þèè thè <a href="http://pkp.sfu.ca/support/forum">þüppórt fórüm</a> ór vîþît PKP'þ óñlîñè <a href="http://pkp.sfu.ca/bugzilla/" target="_blank">büg rèpórtîñg þýþtèm</a>. Ælthóügh thè þüppórt fórüm îþ thè prèfèrrèð mèthóð óf çóñtåçt, ýóü çåñ ålþó èmåîl thè tèåm åt <a href="mailto:pkp.contact@gmail.com">pkp-þüppórt@þfü.çå</a>.</p>
+
+<h4>Rèçómmèñðèð þýþtèm rèqüîrèmèñtþ</h4>
+
+<ul>
+	<li><a href="http://www.php.net/" target="_blank">PHP</a> >= 4.2.x (including PHP 5.x)</lî>
+	<lî><å hrèf="http://www.mýþql.çóm/" tårgèt="_blåñk">MySQL</å> >= 3.23.23 (including MySQL 4.x) or <a href="http://www.postgresql.org/" target="_blank">PostgreSQL</a> >= 7.1 (including PostgreSQL 8.x)</li>
+	<li><a href="http://httpd.apache.org/" target="_blank">Apache</a> >= 1.3.2x or >= 2.0.4x or Microsoft IIS 6</li>
+	<li>Operating system: Any OS that supports the above software, including <a href="http://www.linux.org/" target="_blank">Linux</a>, <a href="http://www.bsd.org/" target="_blank">BSD</a>, <a href="http://www.sun.com/" target="_blank">Solaris</a>, <a href="http://www.apple.com/" target="_blank">Mac OS X</a>, <a href="http://www.microsoft.com/">Windows</a></li>
+</ul>
+
+<p>As PKP does not have the resources to test every possible combination of software versions and platforms, no guarantee of correct operation or support is implied.</p>
+
+<p>Changes to these settings can be made after installation by editing the file <tt>config.inc.php</tt> in the base Harvester2 directory, or using the site administration web interface.</p>
+
+<h4>Supported database systems</h4>
+
+<p>Harvester2 has currently only been tested on MySQL and PostgreSQL, although other database management systems supported by <a href="http://adodb.sourceforge.net/" target="_blank">ADOdb</a> may work (in full or partially). Compatibility reports and/or code patches for alternative DBMSs can be sent to the Harvester2 team.</p>
+
+<h4>Pre-Installation Steps</h4>
+
+<p>1. The following files and directories (and their contents) must be made writable:</p>
+<ul>
+	<li><tt>config.inc.php</tt> is writable (optional): {$writable_config}</li>
+	<li><tt>cache/</tt> is writable: {$writable_cache}</li>
+	<li><tt>cache/t_cache/</tt> is writable: {$writable_templates_cache}</li>
+	<li><tt>cache/t_compile/</tt> is writable: {$writable_templates_compile}</li>
+	<li><tt>cache/_db</tt> is writable: {$writable_db_cache}</li>
+</ul>]]></message>
+	<message key="installer.upgradeInstructions"><![CDATA[<h4>Hårvèþtèr2 Vèrþîóñ {$version}</h4>
+	
+<p>Thåñk ýóü fór ðówñlóåðîñg thè Püblîç Kñówlèðgè Prójèçt'þ <strong>Hårvèþtèr2</strong>. Bèfórè próçèèðîñg, plèåþè rèåð thè <a href="{$baseUrl}/docs/README">RÉÆÐMÉ</a> åñð <a href="{$baseUrl}/docs/UPGRADE">ÜPGRÆÐÉ</a> fîlèþ îñçlüðèð wîth thîþ þóftwårè. Fór mórè îñfórmåtîóñ åbóüt thè Püblîç Kñówlèðgè Prójèçt åñð îtþ þóftwårè prójèçtþ, plèåþè vîþît thè <a href="http://pkp.sfu.ca/" target="_blank">PKP wèb þîtè</a>. Îf ýóü håvè büg rèpórtþ ór tèçhñîçål þüppórt îñqüîrîèþ åbóüt Hårvèþtèr2, þèè thè <a href="http://pkp.sfu.ca/support/forum">þüppórt fórüm</a> ór vîþît PKP'þ óñlîñè <a href="http://pkp.sfu.ca/bugzilla/" target="_blank">büg rèpórtîñg þýþtèm</a>. Ælthóügh thè þüppórt fórüm îþ thè prèfèrrèð mèthóð óf çóñtåçt, ýóü çåñ ålþó èmåîl thè tèåm åt <a href="mailto:pkp.contact@gmail.com">pkp-þüppórt@þfü.çå</a>.</p>
+<p>Ît îþ <strong>þtróñglý rèçómmèñðèð</strong> thåt ýóü båçk üp ýóür ðåtåbåþè, fîlèþ ðîrèçtórý, åñð Hårvèþtèr2 îñþtållåtîóñ ðîrèçtórý bèfórè próçèèðîñg.</p>
+<p>Îf ýóü årè rüññîñg îñ <a href="http://www.php.net/features.safe-mode" target="_blank">PHP ßåfè Móðè</a>, plèåþè èñþürè thåt thè måx_èxèçütîóñ_tîmè ðîrèçtîvè îñ ýóür php.îñî çóñfîgüråtîóñ fîlè îþ þèt tó å hîgh lîmît. Îf thîþ ór åñý óthèr tîmè lîmît (è.g. Æpåçhè'þ "Tîmèóüt" ðîrèçtîvè) îþ rèåçhèð åñð thè üpgråðè próçèþþ îþ îñtèrrüptèð, måñüål îñtèrvèñtîóñ wîll bè rèqüîrèð.</p>]]></message>
+	<message key="installer.localeSettings">Lóçålè ßèttîñgþ</message>
+	<message key="installer.localeSettingsInstructions"><![CDATA[Fór çómplètè Üñîçóðè (ÜTF-8) þüppórt, þèlèçt ÜTF-8 fór åll çhåråçtèr þèt þèttîñgþ. Ñótè thåt thîþ þüppórt çürrèñtlý rèqüîrèþ å MýßQL >= 4.1.1 or PostgreSQL >= 7.1 database server. Please also note that full Unicode support requires PHP >= 4.3.0 compiled with support for the <a href="http://www.php.net/mbstring" target="_blank">mbstring</a> library (enabled by default in most recent PHP installations). You may experience problems using extended character sets if your server does not meet these requirements.
+<br /><br />
+Your server currently supports mbstring: <strong>{$supportsMBString}</strong>]]></message>
+	<message key="installer.localeInstructions">Thè prîmårý låñgüågè tó üþè fór thîþ þýþtèm. Plèåþè çóñþült thè Hårvèþtèr2 ðóçümèñtåtîóñ îf ýóü årè îñtèrèþtèð îñ þüppórt fór låñgüågèþ ñót lîþtèð hèrè.</message>
+	<message key="installer.additionalLocales">Æððîtîóñål lóçålèþ</message>
+	<message key="installer.additionalLocalesInstructions">ßèlèçt åñý åððîtîóñål låñgüågèþ tó þüppórt îñ thîþ þýþtèm. Æððîtîóñål låñgüågèþ çåñ ålþó bè îñþtållèð åt åñý tîmè fróm thè þîtè åðmîñîþtråtîóñ îñtèrfåçè.</message>
+	<message key="installer.clientCharset">Çlîèñt çhåråçtèr þèt</message>
+	<message key="installer.clientCharsetInstructions">Thè èñçóðîñg tó üþè fór ðåtå þèñt tó åñð rèçèîvèð fróm brówþèrþ.</message>
+	<message key="installer.connectionCharset">Çóññèçtîóñ çhåråçtèr þèt</message>
+	<message key="installer.connectionCharsetInstructions"><![CDATA[Thè èñçóðîñg tó üþè fór ðåtå þèñt tó åñð rèçèîvèð fróm thè ðåtåbåþè. Thîþ þhóülð bè thè þåmè åþ thè çlîèñt çhåråçtèr þèt. Ñótè thåt thîþ çåpåbîlîtý îþ óñlý þüppórtèð wîth MýßQL >= 4.1.1 or PostgreSQL >= 7.1. Select "Not available" if your database server does not meet these requirements.]]></message>
+	<message key="installer.databaseCharset">Ðåtåbåþè çhåråçtèr þèt</message>
+	<message key="installer.databaseCharsetInstructions"><![CDATA[Thè èñçóðîñg tó üþè fór ðåtå þtórèð îñ thè ðåtåbåþè. Ñótè thåt thîþ çåpåbîlîtý îþ óñlý þüppórtèð wîth MýßQL >= 4.1.1 or PostgreSQL >= 7.1. Select "Not available" if your database server does not meet these requirements.]]></message>
+	<message key="installer.locale">Lóçålè</message>
+	<message key="installer.securitySettings">ßèçürîtý ßèttîñgþ</message>
+	<message key="installer.encryption">Påþþwórð èñçrýptîóñ ålgórîthm</message>
+	<message key="installer.encryptionInstructions"><![CDATA[ßHÆ1 îþ rèçómmèñðèð îf ýóür þýþtèm þüppórtþ ît (rèqüîrèþ PHP >= 4.3.0).]]></message>
+	<message key="installer.administratorAccount">Æðmîñîþtråtór Æççóüñt</message>
+	<message key="installer.administratorAccountInstructions">Thîþ üþèr åççóüñt wîll bèçómè thè þîtè åðmîñîþtråtór åñð håvè çómplètè åççèþþ tó thè þýþtèm. Æððîtîóñål üþèr åççóüñtþ çåñ bè çrèåtèð åftèr îñþtållåtîóñ.</message>
+	<message key="installer.databaseSettings">Ðåtåbåþè ßèttîñgþ</message>
+	<message key="installer.databaseDriver">Ðåtåbåþè ðrîvèr</message>
+	<message key="installer.databaseHost">Hóþt</message>
+	<message key="installer.databaseUsername">Üþèrñåmè</message>
+	<message key="installer.databasePassword">Påþþwórð</message>
+	<message key="installer.databaseName">Ðåtåbåþè ñåmè</message>
+	<message key="installer.databaseDriverInstructions"><![CDATA[<strong>Ðåtåbåþè ðrîvèrþ lîþtèð îñ bråçkètþ ðó ñót åppèår tó håvè thè rèqüîrèð PHP èxtèñþîóñ lóåðèð åñð îñþtållåtîóñ wîll lîkèlý fåîl îf þèlèçtèð.</strong><br />Æñý üñþüppórtèð ðåtåbåþè ðrîvèrþ lîþtèð åbóvè årè lîþtèð þólèlý fór åçåðèmîç pürpóþèþ åñð årè üñlîkèlý tó wórk.]]></message>
+	<message key="installer.databaseHostInstructions">Lèåvè thè hóþtñåmè blåñk tó çóññèçt üþîñg ðómåîñ þóçkètþ îñþtèåð óf óvèr TÇP/ÎP. Thîþ îþ ñót ñèçèþþårý wîth MýßQL, whîçh wîll åütómåtîçållý üþè þóçkètþ îf "lóçålhóþt" îþ èñtèrèð, büt îþ rèqüîrèð wîth þómè óthèr ðåtåbåþè þèrvèrþ þüçh åþ PóþtgrèßQL.</message>
+	<message key="installer.createDatabase">Çrèåtè ñèw ðåtåbåþè</message>
+	<message key="installer.createDatabaseInstructions">Tó üþè thîþ óptîóñ ýóür ðåtåbåþè þýþtèm müþt þüppórt rèmótè ðåtåbåþè çrèåtîóñ åñð ýóür üþèr åççóüñt müþt håvè thè åppróprîåtè pèrmîþþîóñþ tó çrèåtè ñèw ðåtåbåþèþ. Îf îñþtållåtîóñ fåîlþ wîth thîþ óptîóñ þèlèçtèð, måñüållý çrèåtè thè ðåtåbåþè óñ ýóür þèrvèr åñð rüñ thè îñþtållèr ågåîñ wîth thîþ óptîóñ ðîþåblèð.</message>
+	<message key="installer.installHarvester2">Îñþtåll Hårvèþtèr2</message>
+	<message key="installer.upgradeHarvester2">Üpgråðè Hårvèþtèr2</message>
+	<message key="installer.form.localeRequired">Æ lóçålè müþt bè þèlèçtèð.</message>
+	<message key="installer.form.clientCharsetRequired">Æ çlîèñt çhåråçtèr þèt müþt bè þèlèçtèð.</message>
+	<message key="installer.form.filesDirRequired">Thè ðîrèçtórý tó bè üþèð fór þtórîñg üplóåðèð fîlèþ îþ rèqüîrèð.</message>
+	<message key="installer.form.encryptionRequired">Thè ålgórîthm tó üþè fór èñçrýptîñg üþèr påþþwórðþ müþt bè þèlèçtèð.</message>
+	<message key="installer.form.databaseDriverRequired">Æ ðåtåbåþè ðrîvèr müþt bè þèlèçtèð.</message>
+	<message key="installer.form.databaseNameRequired">Thè ðåtåbåþè ñåmè îþ rèqüîrèð.</message>
+	<message key="installer.form.usernameRequired">Æ üþèrñåmè fór thè åðmîñîþtråtór åççóüñt îþ rèqüîrèð.</message>
+	<message key="installer.form.passwordRequired">Æ påþþwórð fór thè åðmîñîþtråtór åççóüñt îþ rèqüîrèð.</message>
+	<message key="installer.form.usernameAlphaNumeric">Thè åðmîñîþtråtór üþèrñåmè çåñ çóñtåîñ óñlý ålphåñümèrîç çhåråçtèrþ, üñðèrþçórèþ, åñð hýphèñþ, åñð müþt bègîñ åñð èñð wîth åñ ålphåñümèrîç çhåråçtèr.</message>
+	<message key="installer.form.passwordsDoNotMatch">Thè åðmîñîþtråtór påþþwórðþ ðó ñót måtçh.</message>
+	<message key="installer.form.emailRequired">Æ vålîð èmåîl åððrèþþ fór thè åðmîñîþtråtór åççóüñt îþ rèqüîrèð.</message>
+	<message key="installer.form.separateMultiple">ßèpåråtè mültîplè vålüèþ wîth çómmåþ</message>
+	<message key="installer.installErrorsOccurred">Érrórþ óççürrèð ðürîñg îñþtållåtîóñ</message>
+	<message key="installer.installFilesDirError">Thè ðîrèçtórý þpèçîfîèð fór üplóåðèð fîlèþ ðóèþ ñót èxîþt ór îþ ñót wrîtåblè.</message>
+	<message key="installer.publicFilesDirError">Thè püblîç fîlèþ ðîrèçtórý ðóèþ ñót èxîþt ór îþ ñót wrîtåblè.</message>
+	<message key="installer.installFileError"><![CDATA[Thè îñþtållåtîóñ fîlè <tt>ðbþçrîptþ/xml/îñþtåll.xml</tt> ðóèþ ñót èxîþt ór îþ ñót rèåðåblè.]]></message>
+	<message key="installer.installParseDBFileError"><![CDATA[Érrór pårþîñg thè ðåtåbåþè îñþtållåtîóñ fîlè <tt>{$file}</tt>.]]></message>
+	<message key="installer.configFileError"><![CDATA[Thè çóñfîgüråtîóñ fîlè <tt>çóñfîg.îñç.php</tt> ðóèþ ñót èxîþt ór îþ ñót rèåðåblè.]]></message>
+	<message key="installer.reinstallAfterDatabaseError"><![CDATA[<b>Wårñîñg:</b> Îf îñþtållåtîóñ fåîlèð pårt wåý thróügh ðåtåbåþè îñþtållåtîóñ ýóü måý ñèèð tó ðróp ýóür Hårvèþtèr2 ðåtåbåþè ór ðåtåbåþè tåblèþ bèfórè åttèmptîñg tó rèîñþtåll thè ðåtåbåþè.]]></message>
+	<message key="installer.overwriteConfigFileInstructions"><![CDATA[<h4>ÎMPÒRTÆÑT!</h4>
+<p>Thè îñþtållèr çóülð ñót åütómåtîçållý óvèrwrîtè thè çóñfîgüråtîóñ fîlè. Bèfórè åttèmptîñg tó üþè thè þýþtèm, plèåþè ópèñ <tt>çóñfîg.îñç.php</tt> îñ å þüîtåblè tèxt èðîtór åñð rèplåçè îtþ çóñtèñtþ wîth thè çóñtèñtþ óf thè tèxt fîèlð bèlów.</p>]]></message>
+	<message key="installer.contentsOfConfigFile">Çóñtèñtþ óf çóñfîgüråtîóñ fîlè</message>
+	<message key="installer.installerSQLStatements">ßQL þtåtèmèñtþ fór îñþtållåtîóñ</message>
+	<message key="installer.installationComplete"><![CDATA[<p>Îñþtållåtîóñ óf Hårvèþtèr2 håþ çómplètèð þüççèþþfüllý.</p>
+<p>Tó bègîñ üþîñg thè þýþtèm, <a href="{$indexUrl}/login">lógîñ</a> wîth thè üþèrñåmè åñð påþþwórð èñtèrèð óñ thè prèvîóüþ pågè.</p>]]></message>
+	<message key="installer.upgradeComplete"><![CDATA[<p>Üpgråðè óf Hårvèþtèr2 tó vèrþîóñ {$version} håþ çómplètèð þüççèþþfüllý.</p>
+<p>Ðóñ't fórgèt tó þèt thè "îñþtållèð" þèttîñg îñ ýóür çóñfîg.îñç.php çóñfîgüråtîóñ fîlè båçk tó <i>Òñ</i>.</p>]]></message>
+	<message key="installer.releaseNotes">Rèlèåþè Ñótèþ</message>
+	<message key="installer.checkYes">Ýèþ</message>
+	<message key="installer.checkNo"><![CDATA[<span class="formError">ÑÒ</span>]]></message>
+	<message key="locale.primary">Prîmårý Lóçålè</message>
+	<message key="locale.supported">ßüppórtèð Lóçålèþ</message>
+	<message key="user.login">Lóg Îñ</message>
+	<message key="user.logout">Lóg Òüt</message>
+	<message key="user.username">Üþèrñåmè</message>
+	<message key="user.password">Påþþwórð</message>
+	<message key="user.email">Émåîl</message>
+	<message key="user.register.repeatPassword">Rèpèåt Påþþwórð</message>
+	<message key="user.login.loginError">Îñvålîð üþèrñåmè ór påþþwórð. Plèåþè trý ågåîñ.</message>
+	<message key="user.login.rememberMe">Rèmèmbèr mè</message>
+	<message key="user.login.rememberUsernameAndPassword">Rèmèmbèr mý üþèrñåmè åñð påþþwórð</message>
+	<message key="form.errorsOccurred">Érrórþ óççürrèð próçèþþîñg thîþ fórm</message>
+	<message key="archive.archives">Ærçhîvèþ</message>
+	<message key="archive.title">Tîtlè</message>
+	<message key="archive.recordCount">Rèçórð Çóüñt</message>
+	<message key="archive.url">ÜRL</message>
+	<message key="archive.publicArchiveId">Püblîç ÎÐ</message>
+	<message key="archive.description">Ðèþçrîptîóñ</message>
+	<message key="archive.type">Týpè</message>
+	<message key="archive.lastIndexed">Låþt Îñðèxèð</message>
+	<message key="admin.siteAdmin">ßîtè Æðmîñîþtråtîóñ</message>
+	<message key="admin.siteSettings">ßîtè ßèttîñgþ</message>
+	<message key="admin.archives">Ærçhîvèþ</message>
+	<message key="admin.crosswalks">Çróþþwålkþ</message>
+	<message key="admin.plugins">Plügîñþ</message>
+	<message key="admin.rtAdmin">Rèåðîñg Tóólþ</message>
+	<message key="admin.archives.manage">Måñågè Ærçhîvè</message>
+	<message key="admin.archives.manage.numRecords">Ñümbèr óf Påpèrþ Îñðèxèð</message>
+	<message key="admin.archives.manage.updateIndex">Üpðåtè Mètåðåtå Îñðèx</message>
+	<message key="admin.archives.manage.flush">Flüþh Mètåðåtå</message>
+	<message key="admin.archives.manage.updateIndex.confirm">Ærè ýóü þürè ýóü wîþh tó üpðåtè thè mètåðåtå îñðèx? Thîþ ópèråtîóñ måý tåkè þèvèrål mîñütèþ, ðèpèñðîñg óñ thè þîzè óf thè årçhîvè.</message>
+	<message key="admin.archives.confirmDelete">Ærè ýóü þürè ýóü wîþh tó ðèlètè thîþ årçhîvè åñð åll óf îtþ rèçórðþ?</message>
+	<message key="admin.archive.manage.updateIndex.success">Thè mètåðåtå îñðèx håþ bèèñ üpðåtèð. {$recordCount} rèçórðþ årè çürrèñtlý îñðèxèð.</message>
+	<message key="admin.archive.manage.updateIndex.failure">Thè mètåðåtå îñðèx çóülð ñót bè üpðåtèð. Thè fóllówîñg èrrór(þ) óççürrèð:</message>
+	<message key="admin.archive.manage.updateIndex.return">Rètürñ tó måñågèmèñt</message>
+	<message key="admin.archive.manage.updateIndex.failure.generic">Æñ üñkñówñ èrrór óççürrèð.</message>
+	<message key="admin.settings.siteTitle">ßîtè tîtlè</message>
+	<message key="admin.settings.introduction">Îñtróðüçtîóñ</message>
+	<message key="admin.settings.aboutDescription">Æbóüt thè ßîtè ðèþçrîptîóñ</message>
+	<message key="admin.settings.form.titleRequired">Æ tîtlè îþ rèqüîrèð.</message>
+	<message key="admin.settings.contactName">Ñåmè óf prîñçîpål çóñtåçt</message>
+	<message key="admin.settings.contactEmail">Émåîl óf prîñçîpål çóñtåçt</message>
+	<message key="admin.settings.form.contactNameRequired">Thè ñåmè óf thè prîñçîpål çóñtåçt îþ rèqüîrèð.</message>
+	<message key="admin.settings.form.contactEmailRequired">Thè èmåîl åððrèþþ óf thè prîñçîpål çóñtåçt îþ rèqüîrèð.</message>
+	<message key="admin.settings.siteLanguage">ßîtè låñgüågè</message>
+	<message key="admin.siteManagement">ßîtè Måñågèmèñt</message>
+	<message key="admin.adminFunctions">Æðmîñîþtråtîvè Füñçtîóñþ</message>
+	<message key="admin.expireSessions">Éxpîrè Üþèr ßèþþîóñþ</message>
+	<message key="admin.confirmExpireSessions">Ærè ýóü þürè ýóü wåñt tó èxpîrè åll üþèr þèþþîóñþ? Ýóü wîll bè fórçèð tó lóg îñ ågåîñ.</message>
+	<message key="admin.clearTemplateCache">Çlèår Tèmplåtè Çåçhè</message>
+	<message key="admin.clearDataCache">Çlèår Ðåtå Çåçhèþ</message>
+	<message key="admin.confirmClearTemplateCache">Ærè ýóü þürè ýóü wåñt tó çlèår thè çåçhè óf çómpîlèð tèmplåtèþ?</message>
+	<message key="admin.systemInformation">ßýþtèm Îñfórmåtîóñ</message>
+	<message key="admin.crosswalks.crosswalk.name">Ñåmè</message>
+	<message key="admin.crosswalks.crosswalk.publicCrosswalkId">Püblîç Çróþþwålk ÎÐ</message>
+	<message key="admin.crosswalks.crosswalk.description">Ðèþçrîptîóñ</message>
+	<message key="admin.crosswalks.crosswalk.sortableDescription">Ællów üþèrþ tó þórt rèçórðþ üþîñg thîþ çróþþwålk whèñ brówþîñg rèçórðþ</message>
+	<message key="admin.crosswalks.crosswalk.type">Týpè</message>
+	<message key="admin.crosswalks.crosswalk.type.string">Tèxt</message>
+	<message key="admin.crosswalks.crosswalk.type.select">ßèlèçt</message>
+	<message key="admin.crosswalks.crosswalk.type.date">Ðåtè</message>
+	<message key="admin.crosswalks.crosswalks.noneCreated">Ñóñè Çrèåtèð</message>
+	<message key="admin.crosswalks.addCrosswalk">Æðð Çróþþwålk</message>
+	<message key="admin.crosswalks.reset">Rèþèt Tó Ðèfåültþ</message>
+	<message key="admin.crosswalks.confirmReset">Ærè ýóü þürè ýóü wîþh tó rèþèt çróþþwålkþ tó ðèfåültþ?</message>
+	<message key="admin.crosswalks.confirmDelete">Ærè ýóü þürè ýóü wîþh tó ðèlètè thîþ çróþþwålk?</message>
+	<message key="admin.crosswalks.form.nameRequired">Æ ñåmè îþ rèqüîrèð.</message>
+	<message key="admin.crosswalks.form.descriptionRequired">Æ ðèþçrîptîóñ îþ rèqüîrèð.</message>
+	<message key="admin.crosswalks.form.publicCrosswalkIdExists">Æ çróþþwålk wîth thè þpèçîfîèð püblîç çróþþwålk ÎÐ ålrèåðý èxîþtþ. Plèåþè çhóóþè åñóthèr åñð trý ågåîñ.</message>
+	<message key="admin.crosswalks.form.publicCrosswalkId.description">Whèñ þpèçîfîèð, thè püblîç çróþþwålk ÎÐ çåñ bè üþèð îñ ÜRL-båþèð þèårçhèþ.</message>
+	<message key="admin.crosswalks.editCrosswalk">Éðît Çróþþwålk</message>
+	<message key="admin.crosswalks.schemaFilter">ßçhèmå Fîltèr</message>
+	<message key="admin.crosswalks.schemaFilter.all">Æll ßçhèmåþ</message>
+	<message key="admin.crosswalks.schema">ßçhèmå</message>
+	<message key="admin.crosswalks.sort">ßórt</message>
+	<message key="admin.crosswalks.search">ßèårçh</message>
+	<message key="admin.crosswalks.description">Çróþþwålkþ årè üþèð tó îðèñtîfý þîmîlår fîèlðþ îñ ðîffèrèñt mètåðåtå þçhèmå þó thåt çróþþ-þçhèmå þèårçhèþ çåñ bè pèrfórmèð.</message>
+	<message key="admin.archives.addArchive">Æðð Ærçhîvè</message>
+	<message key="admin.archives.editArchive">Éðît Ærçhîvè</message>
+	<message key="admin.archives.manageArchives">Måñågè Ærçhîvèþ</message>
+	<message key="admin.archives.noneCreated">Ñóñè Çrèåtèð</message>
+	<message key="admin.archives.form.titleRequired">Æ tîtlè îþ rèqüîrèð.</message>
+	<message key="admin.archives.form.urlRequired">Thè ÜRL fîèlð îþ rèqüîrèð.</message>
+	<message key="admin.archives.form.publicArchiveIdExists">Æñóthèr årçhîvè ålrèåðý èxîþtþ wîth thè þpèçîfîèð püblîç årçhîvè ÎÐ. Plèåþè çhóóþè åñóthèr.</message>
+	<message key="admin.archives.form.url.description">è.g. http://www.ýóürårçhîvè.çóm</message>
+	<message key="admin.archives.form.publicArchiveId.description">Thîþ üñîqüè îðèñtîfîèr çåñ bè üþèð îñ ÜRL-båþèð þèårçhèþ tó îðèñtîfý thîþ årçhîvè.</message>
+	<message key="admin.languages.languageSettings">Låñgüågè ßèttîñgþ</message>
+	<message key="admin.languages.installLanguages">Îñþtåll Låñgüågèþ</message>
+	<message key="admin.languages.primaryLocaleInstructions">Thîþ wîll bè thè ðèfåült låñgüågè fór thè þîtè.</message>
+	<message key="admin.languages.supportedLocalesInstructions">ßèlèçt åll lóçålèþ tó þüppórt óñ thè þîtè. Îf mültîplè lóçålèþ årè ñót þèlèçtèð, thè låñgüågè tógglè mèñü wîll ñót åppèår åñð èxtèñðèð låñgüågè þèttîñgþ wîll ñót bè åvåîlåblè.</message>
+	<message key="admin.languages.languageOptions">Låñgüågè óptîóñþ</message>
+	<message key="admin.languages.installedLocales">Îñþtållèð Lóçålèþ</message>
+	<message key="admin.languages.reload">Rèlóåð Lóçålè</message>
+	<message key="admin.languages.confirmReload">Ærè ýóü þürè ýóü wåñt tó rèlóåð thîþ lóçålè? Thîþ wîll èråþè åñý èxîþtîñg lóçålè-þpèçîfîç ðåtå þüçh åþ çüþtómîzèð èmåîl tèmplåtèþ.</message>
+	<message key="admin.languages.uninstall">Üñîñþtåll Lóçålè</message>
+	<message key="admin.languages.confirmUninstall">Ærè ýóü þürè ýóü wåñt tó üñîñþtåll thîþ lóçålè?</message>
+	<message key="admin.languages.installNewLocales">Îñþtåll Ñèw Lóçålèþ</message>
+	<message key="admin.languages.installNewLocalesInstructions">ßèlèçt åñý åððîtîóñål lóçålèþ tó îñþtåll þüppórt fór îñ thîþ þýþtèm. ßèè thè Hårvèþtèr2 ðóçümèñtåtîóñ fór îñfórmåtîóñ óñ åððîñg þüppórt fór ñèw låñgüågèþ.</message>
+	<message key="admin.languages.noLocalesAvailable">Ñó åððîtîóñål lóçålèþ årè åvåîlåblè fór îñþtållåtîóñ.</message>
+	<message key="admin.languages.installLocales">Îñþtåll</message>
+	<message key="admin.systemVersion">Hårvèþtèr2 Vèrþîóñ</message>
+	<message key="admin.systemConfiguration">Hårvèþtèr2 Çóñfîgüråtîóñ</message>
+	<message key="admin.serverInformation">ßèrvèr Îñfórmåtîóñ</message>
+	<message key="admin.currentVersion">Çürrèñt vèrþîóñ</message>
+	<message key="admin.versionHistory">Vèrþîóñ hîþtórý</message>
+	<message key="admin.version">Vèrþîóñ</message>
+	<message key="admin.versionMajor">Måjór</message>
+	<message key="admin.versionMinor">Mîñór</message>
+	<message key="admin.versionRevision">Rèvîþîóñ</message>
+	<message key="admin.versionBuild">Büîlð</message>
+	<message key="admin.dateInstalled">Ðåtè îñþtållèð</message>
+	<message key="admin.systemConfigurationDescription"><![CDATA[Hårvèþtèr2 çóñfîgüråtîóñ þèttîñgþ fróm <tt>çóñfîg.îñç.php</tt>.]]></message>
+	<message key="admin.serverInformationDescription"><![CDATA[Båþîç ópèråtîñg þýþtèm åñð þèrvèr þóftwårè vèrþîóñþ. Çlîçk óñ <span class="highlight">Éxtèñðèð PHP Îñfórmåtîóñ</span> tó vîèw èxtèñðèð ðètåîlþ óf thîþ þèrvèr'þ PHP çóñfîgüråtîóñ.]]></message>
+	<message key="admin.phpInfo">Éxtèñðèð PHP Îñfórmåtîóñ</message>
+	<message key="admin.server.platform">Òß plåtfórm</message>
+	<message key="admin.server.phpVersion">PHP vèrþîóñ</message>
+	<message key="admin.server.apacheVersion">Æpåçhè vèrþîóñ</message>
+	<message key="admin.server.dbDriver">Ðåtåbåþè ðrîvèr</message>
+	<message key="admin.server.dbVersion">Ðåtåbåþè þèrvèr vèrþîóñ</message>
+	<message key="admin.displayNewSystemConfig">Ðîþplåý Ñèw Çóñfîgüråtîóñ</message>
+	<message key="admin.systemConfigFileReadError"><![CDATA[Thè çóñfîgüråtîóñ fîlè <tt>çóñfîg.îñç.php</tt> ðóèþ ñót èxîþt, îþ ñót rèåðåblè, ór îþ îñvålîð.]]></message>
+	<message key="admin.overwriteConfigFileInstructions"><![CDATA[<h4>ÑÒTÉ!</div>
+<p>Thè þýþtèm çóülð ñót åütómåtîçållý óvèrwrîtè thè çóñfîgüråtîóñ fîlè. Tó åpplý ýóür çóñfîgüråtîóñ çhåñgèþ ýóü müþt ópèñ <tt>çóñfîg.îñç.php</tt> îñ å þüîtåblè tèxt èðîtór åñð rèplåçè îtþ çóñtèñtþ wîth thè çóñtèñtþ óf thè tèxt fîèlð bèlów.</p>]]></message>
+	<message key="admin.displayConfigFileInstructions"><![CDATA[Thè çóñtèñtþ óf ýóür üpðåtèð çóñfîgüråtîóñ årè ðîþplåýèð bèlów. Tó åpplý thè çóñfîgüråtîóñ çhåñgèþ ýóü müþt ópèñ <tt>çóñfîg.îñç.php</tt> îñ å þüîtåblè tèxt èðîtór åñð rèplåçè îtþ çóñtèñtþ wîth thè çóñtèñtþ óf thè tèxt fîèlð bèlów.]]></message>
+	<message key="admin.configFileUpdatedInstructions"><![CDATA[Ýóür çóñfîgüråtîóñ fîlè håþ bèèñ þüççèþþfüllý üpðåtèð. Plèåþè ñótè thåt îf ýóür þîtè ñó lóñgèr füñçtîóñþ çórrèçtlý ýóü måý ñèèð tó måñüållý fîx ýóür çóñfîgüråtîóñ bý èðîtîñg <tt>çóñfîg.îñç.php</tt> ðîrèçtlý.]]></message>
+	<message key="admin.contentsOfConfigFile">Çóñtèñtþ óf çóñfîgüråtîóñ fîlè</message>
+	<message key="admin.version.checkForUpdates">Çhèçk fór üpðåtèþ</message>
+	<message key="admin.version.latest">Låtèþt vèrþîóñ</message>
+	<message key="admin.version.upToDate">Ýóür þýþtèm îþ üp-tó-ðåtè</message>
+	<message key="admin.version.updateAvailable">Æñ üpðåtèð vèrþîóñ îþ åvåîlåblè</message>
+	<message key="admin.version.downloadPackage">Ðówñlóåð</message>
+	<message key="admin.version.downloadPatch">Ðówñlóåð Påtçh</message>
+	<message key="admin.version.moreInfo">Mórè Îñfórmåtîóñ</message>
+	<message key="sidebar.harvesterStats">Hårvèþtèr ßtåtþ</message>
+	<message key="sidebar.harvesterStats.description"><![CDATA[Hårvèþtèr2 çürrèñtlý håþ <strong>{$recordCount}</strong> påpèrþ fróm <strong>{$archiveCount}</strong> årçhîvè(þ) îñðèxèð.]]></message>
+	<message key="sidebar.addYourArchive">Æðð Ýóür Ærçhîvè</message>
+	<message key="sidebar.addYourArchive.description"><![CDATA[<a href="{$addUrl}">Çlîçk hèrè</a> tó åðð ýóür þýþtèm tó óür îñðèx.]]></message>
+	<message key="default.siteIntro"><![CDATA[<strong>Wèlçómè tó thè Püblîç Kñówlèðgè Prójèçt'þ mètåðåtå årçhîvè...</strong>
+	
+	Tó împróvè thè åççüråçý óf þèårçhîñg wîthîñ thè PKP ßýþtèm, åüthórþ håvè bèèñ åþkèð tó îñðèx thèîr wórk, whèrè åpplîçåblè, bý ðîþçîplîñè(þ), tópîçþ, gèñrè, mèthóð, çóvèrågè, åñð þåmplè. Thîþ ållówþ ýóü tó þèårçh fór "èmpîrîçål" vèrþüþ "hîþtórîçål" þtüðîèþ, fór èxåmplè, üñðèr "îñðèx tèrmþ." Ýóü çåñ ålþó vîèw å ðóçümèñt'þ îñðèx tèrmþ bý þèlèçtîñg thè çómplètè rèçórð fróm åmóñg thè þèårçh rèþültþ.]]></message>
+	<message key="default.emailSignature">________________________________________________________________________
+	Hårvèþtèr2
+	{$indexUrl}</message>
+	<message key="default.footer"><![CDATA[&amp;çópý; 2005-2007 <a href="http://pkp.sfu.ca/harvester2">Püblîç Kñówlèðgè Prójèçt</a>]]></message>
+	<message key="about.harvester">Æbóüt thè Hårvèþtèr</message>
+	<message key="about.harvester.description">Thè PKP Òpèñ Ærçhîvèþ Hårvèþtèr îþ å frèè mètåðåtå îñðèxîñg þýþtèm ðèvèlópèð bý thè Püblîç Kñówlèðgè Prójèçt thróügh îtþ fèðèrållý füñðèð èffórtþ tó èxpåñð åñð împróvè åççèþþ tó rèþèårçh. Thè PKP ÒÆÎ Hårvèþtèr ållówþ ýóü tó çrèåtè å þèårçhåblè îñðèx óf thè mètåðåtå fróm Òpèñ Ærçhîvèþ Îñîtîåtîvè-çómplîåñt årçhîvèþ, þüçh åþ þîtèþ üþîñg Òpèñ Jóürñål ßýþtèmþ ór Òpèñ Çóñfèrèñçè ßýþtèmþ.
+	
+	Thè PKP ÒÆÎ Hårvèþtèr îþ çürrèñtlý çómpåtîblè wîth vèrþîóñþ 1.1 åñð 2.0 óf thè ÒÆÎ Hårvèþtîñg Prótóçól.</message>
+	<message key="search.syntaxInstructions"><![CDATA[ßèårçh tîpþ: <ul>
+<li>ßèårçh tèrmþ årè çåþè-îñþèñþîtîvè</li>
+<li>Çómmóñ wórðþ årè îgñórèð</li>
+<li>Bý ðèfåült óñlý èñtrîèþ çóñtåîñîñg <i>åll</i> tèrmþ îñ thè qüèrý årè rètürñèð (î.è., <i>ÆÑÐ</i> îþ împlîèð)</li>
+<li>Çómbîñè mültîplè wórðþ wîth <i>ÒR</i> tó fîñð årtîçlèþ çóñtåîñîñg èîthèr tèrm; è.g., <i>èðüçåtîóñ ÒR rèþèårçh</i></li>
+<li>Üþè pårèñthèþèþ tó çrèåtè mórè çómplèx qüèrîèþ; è.g., <i>årçhîvè ((jóürñål ÒR çóñfèrèñçè) ÑÒT thèþèþ)</i></li>
+<li>ßèårçh fór åñ èxåçt phråþè bý püttîñg ît îñ qüótèþ; è.g., <i>"ópèñ åççèþþ püblîþhîñg"</i></li>
+<li>Éxçlüðè å wórð bý prèfîxîñg ît wîth <b>-</b> ór <i>ÑÒT</i>; è.g. <i>óñlîñè -pólîtîçþ</i> ór <i>óñlîñè ÑÒT pólîtîçþ</i></li>
+<li>Üþè <b>*</b> îñ å tèrm åþ å wîlðçårð tó måtçh åñý þèqüèñçè óf çhåråçtèrþ; è.g., <i>þóçî* mórålîtý</i> wóülð måtçh ðóçümèñtþ çóñtåîñîñg "þóçîólógîçål" ór "þóçîètål"</li>
+</ul>]]></message>
+	<message key="search.operator.not">ñót</message>
+	<message key="search.operator.and">åñð</message>
+	<message key="search.operator.or">ór</message>
+	<message key="search.select.none">(Ñóñè)</message>
+	<message key="search.allFields">Æll Fîèlðþ</message>
+	<message key="search.fields.more">Mórè Fîèlðþ</message>
+	<message key="search.fields.less">Lèþþ Fîèlðþ</message>
+	<message key="search.inAllArchives">îñ åll årçhîvèþ</message>
+	<message key="search.searchResults">ßèårçh Rèþültþ</message>
+	<message key="search.noKeywordError">Ñó þèårçh tèrmþ wèrè èñtèrèð. Ýóü müþt èñtèr åt lèåþt óñè þèårçh tèrm.</message>
+	<message key="search.noResults">Ñó Rèþültþ</message>
+	<message key="search.reviseSearch">Rèvîþè ßèårçh</message>
+	<message key="search.allArchives">Æll Ærçhîvèþ</message>
+	<message key="browse.browseAll">Æll Ærçhîvèþ</message>
+	<message key="browse.recordCount">({$count} Rèçórðþ)</message>
+	<message key="browse.viewRecord">Vîèw Rèçórð</message>
+	<message key="browse.viewOriginal">Vîèw Òrîgîñål</message>
+	<message key="browse.sortBy">ßórt Bý</message>
+	<message key="browse.sortBy.none">Ñóñè</message>
+	<message key="browse.archiveInfo">Vîèw Ærçhîvè Îñfó</message>
+	<message key="browse.browseRecords">Brówþè Rèçórðþ</message>
+	<message key="record.viewRecord">Rèçórð Ðètåîlþ</message>
+	<message key="record.field">Fîèlð</message>
+	<message key="record.value">Vålüè</message>
+	<message key="record.records">Rèçórðþ</message>
+	<message key="debug.executionTime">Pågè gèñèråtèð îñ</message>
+	<message key="debug.databaseQueries">Ñümbèr óf ðåtåbåþè qüèrîèþ</message>
+	<message key="debug.notes">Ñótèþ:</message>
+	<message key="debug.notes.localeLoad">Lóåðèð lóçålè fîlè "{$localeFile}" fróm XML</message>
+	<message key="debug.notes.localeListLoad">Lóåðèð lóçålè lîþt "{$localeList}" fróm XML</message>
+	<message key="debug.notes.missingLocaleKey">Mîþþîñg lóçålè kèý "{$key}".</message>
+	<message key="debug.notes.schemaMapLoad">Lóåð þçhèmå måp "{$schemaMap}" fróm XML</message>
+	<message key="help.help">Hèlp</message>
+	<message key="help.harvesterHelp">Hårvèþtèr2 Hèlp</message>
+	<message key="help.toc">Tåblè óf Çóñtèñtþ</message>
+	<message key="help.searchResults">ßèårçh Rèþültþ</message>
+	<message key="help.matchesFound">{$matches} måtçhèþ fóüñð</message>
+	<message key="help.noMatchingTopics">Ñó måtçhîñg hèlp tópîçþ wèrè fóüñð.</message>
+	<message key="help.helpIndex">Hèlp Îñðèx</message>
+	<message key="help.contents">Çóñtèñtþ</message>
+	<message key="help.upALevel">Üp å Lèvèl</message>
+	<message key="help.relatedTopics">Rèlåtèð Tópîçþ</message>
+	<message key="help.search">ßèårçh Hèlp</message>
+	<message key="help.searchFor">ßèårçh hèlp tópîçþ fór</message>
+	<message key="help.searchResultsFor">Rèþültþ fór</message>
+	<message key="plugins.categories.generic">Gèñèrîç Plügîñþ</message>
+	<message key="plugins.categories.generic.description">Thîþ çåtègórý çóñtåîñþ gèñèrål-pürpóþè plügîñþ thåt årè ñót bèttèr þüîtèð tó óthèr çåtègórîèþ.</message>
+	<message key="plugins.categories.harvesters">Hårvèþtèr Plügîñþ</message>
+	<message key="plugins.categories.harvesters.description">Thîþ çåtègórý çóñtåîñþ plügîñþ thåt împlèmèñt vårîóüþ hårvèþtîñg prótóçólþ þüçh åþ ÒÆÎ.</message>
+	<message key="plugins.categories.preprocessors">Prèpróçèþþór Plügîñþ</message>
+	<message key="plugins.categories.preprocessors.description">Thîþ çåtègórý çóñtåîñþ plügîñþ thåt próçèþþ hårvèþtèð ðåtå bèfórè ît îþ åððèð tó thè Hårvèþtèr2 rèpóþîtórý îñ îtþ ñåtîvè mètåðåtå fórmåt.</message>
+	<message key="plugins.categories.postprocessors">Póþtpróçèþþór Plügîñþ</message>
+	<message key="plugins.categories.postprocessors.description">Thîþ çåtègórý çóñtåîñþ plügîñþ thåt próçèþþ hårvèþtèð ðåtå åftèr ît håþ bèèñ åððèð tó thè Hårvèþtèr2 rèpóþîtórý îñ îtþ ñåtîvè mètåðåtå fórmåt büt bèfórè ît îþ îñðèxèð fór þèårçhîñg.</message>
+	<message key="plugins.categories.schemas">ßçhèmå Plügîñþ</message>
+	<message key="plugins.categories.schemas.description">Thîþ çåtègórý çóñtåîñþ plügîñþ thåt împlèmèñt vårîóüþ mètåðåtå fórmåtþ.</message>
+	<message key="rt.readingTools">Rèåðîñg Tóólþ</message>
+	<message key="rt.admin.status">ßtåtüþ</message>
+	<message key="rt.admin.configuration">Çóñfîgüråtîóñ</message>
+	<message key="rt.admin.management">Måñågèmèñt</message>
+	<message key="rt.admin.settings">ßèttîñgþ</message>
+	<message key="rt.admin.desc">Hårvèþtèr2 ållówþ thè Æðmîñîþtråtór tó ðèþîgñåtè whîçh Rèåðîñg Tóólþ wîll bè üþèð fór èåçh årçhîvè. Îñ åððîtîóñ, å þîtè-wîðè þèt óf Rèåðîñg Tóólþ çåñ bè próvîðèð åþ å ðèfåült. Plèåþè çhóóþè thè çóñtèxt fór whîçh ýóü wîþh tó çóñfîgürè thè Rèåðîñg Tóólþ.</message>
+	<message key="rt.admin.default">Çhóóþè Ðèfåült Rèåðîñg Tóólþ</message>
+	<message key="rt.admin.selectedVersion">ßèlèçtèð vèrþîóñ</message>
+	<message key="rt.admin.rtDisabled">Ðîþåblèð</message>
+	<message key="rt.admin.rtEnable">Éñtèr ßèttîñgþ tó èñåblè thè RT ór çhåñgè thè þèlèçtèð vèrþîóñ.</message>
+	<message key="rt.admin.versionDescription">Plèåþè þèlèçt thè vèrþîóñ óf thè Rèåðîñg Tóólþ thåt bèþt måtçhèþ thè rèqüîrèmèñtþ óf thîþ jóürñål.</message>
+	<message key="rt.admin.options">Òptîóñþ</message>
+	<message key="rt.admin.settings.disable">Ðîþåblè Rèåðîñg Tóólþ</message>
+	<message key="rt.admin.settings.bibFormat">Bîblîógråphîç fórmåt fór çîtåtîóñ çåptürè</message>
+	<message key="rt.admin.settings.captureCite">Bîblîógråphîç îñfó (Ðîþplåýþ thè çîtåtîóñ óf åñ årtîçlè îñ þtåñðårð fórmåt, wîth þüppórt fór thè fóllówîñg çîtåtîóñ måñågèmèñt þóftwårè: ÉñðÑótè, Rèfèrèñçè Måñågèr, åñð PróÇîtè)</message>
+	<message key="rt.admin.settings.viewMetadata">Îñðèxîñg îñfó (Ðîþplåýþ åñ îtèm'þ îñðèxîñg îñfórmåtîóñ gèñèråtèð bý thè åüthór åñð thè þýþtèm)</message>
+	<message key="rt.admin.settings.supplementaryFiles">ßèè þüpplèmèñtårý fîlèþ (Ðîþplåýþ å lîþt óf åñý þüpplèmèñtårý fîlèþ thåt thè åüthór îñçlüðèð wîth åñ îtèm)</message>
+	<message key="rt.admin.settings.printerFriendly">Gó tó prîñt vèrþîóñ (Tåkèþ rèåðèr tó å prîñtèr-frîèñðlý vèrþîóñ óf åñ îtèm)</message>
+	<message key="rt.admin.settings.authorBio">Æbóüt thè åüthór (Ðîþplåýþ thè bîó þtåtèmèñtþ èñtèrèð bý thè åüthór)</message>
+	<message key="rt.admin.settings.defineTerms">Ðèfîñîtîóñ óf tèrmþ (Éñåblèþ rèåðèrþ tó ðóüblè-çlîçk óñ åñý wórð îñ åñ îtèm åñð þèñð thè wórð tó å ðîçtîóñårý)</message>
+	<message key="rt.admin.settings.addComment">Æðð çómmèñt tó îtèm (Éñåblèþ rèåðèrþ tó póþt çómmèñtþ, whîçh Jóürñål Måñågèr çåñ ðèlètè). Rèåðèr Çómmèñtþ müþt bè èñåblèð îñ Jóürñål ßètüp</message>
+	<message key="rt.admin.settings.emailAuthor">Émåîl thè åüthór (Tåkèþ rèåðèrþ tó åñ èmåîl tèmplåtè wîth thè åüthór'þ èmåîl)</message>
+	<message key="rt.admin.settings.emailOthers">ßèñð îtèm tó çóllèågüè (Tåkèþ rèåðèrþ tó åñ èmåîl tèmplåtè wîth thè tîtlè óf îtèm åþ îtþ þübjèçt)</message>
+	<message key="rt.admin.versions.restoreVersions">Rèþtórè Vèrþîóñþ tó Ðèfåültþ</message>
+	<message key="rt.admin.versions.createVersion">Çrèåtè Vèrþîóñ</message>
+	<message key="rt.admin.versions.confirmRestore">Ærè ýóü þürè ýóü wîþh tó îrrèvèrþîblý rèþtórè åll vèrþîóñþ tó thèîr ðèfåültþ? Îf þó, ýóü wîll ñèèð tó çhóóþè åñ åçtîvè Vèrþîóñ óñ thè ßèttîñgþ pågè.</message>
+	<message key="rt.admin.versions.confirmDelete">Ærè ýóü þürè ýóü wîþh tó ðèlètè thîþ Vèrþîóñ åñð åll åþþóçîåtèð Çóñtèxtþ åñð ßèårçhèþ?</message>
+	<message key="rt.admin.versions.edit.editVersion">Éðît Vèrþîóñ</message>
+	<message key="rt.admin.versions.metadata">Mètåðåtå</message>
+	<message key="rt.admin.versions.export">Éxpórt</message>
+	<message key="rt.admin.versions.importVersion">Împórt Vèrþîóñ</message>
+	<message key="rt.admin.contexts.edit.editContext">Éðît Çóñtèxt</message>
+	<message key="rt.admin.contexts.createContext">Çrèåtè Çóñtèxt</message>
+	<message key="rt.admin.contexts.confirmDelete">Ærè ýóü þürè ýóü wîþh tó ðèlètè thîþ Çóñtèxt åñð åll åþþóçîåtèð ßèårçhèþ?</message>
+	<message key="rt.admin.contexts.metadata">Mètåðåtå</message>
+	<message key="rt.admin.contexts.options">Òptîóñþ</message>
+	<message key="rt.admin.contexts.options.citedBy">Üþè åüthór ñåmèþ åþ ðèfåült þèårçh tèrmþ åñð ðèþçrîbè thè çóñtèxt åþ å þèårçh fór çîtåtîóñþ tó thè årtîçlè.</message>
+	<message key="rt.admin.contexts.options.authorTerms">Üþè åüthór ñåmèþ åþ ðèfåült þèårçh tèrmþ tó èñåblè üþèrþ tó fîñð óthèr wórkþ bý thè åüthórþ fór thîþ îtèm (è.g., fór åñ "Òthèr Wórkþ" çóñtèxt)</message>
+	<message key="rt.admin.contexts.options.geoTerms">Üþè gèógråphîçål îñðèxîñg ðåtå åþ ðèfåült þèårçh tèrmþ.</message>
+	<message key="rt.admin.contexts.options.defineTerms">Üþè thè wórð hîghlîghtèð bý thè rèåðèr åþ ðèfåült þèårçh tèrm ór bè lèft blåñk îf ñóñè håþ bèèñ þèlèçtèð fór thîþ îtèm (è.g., fór å "Ðèfîñîtîóñ óf tèrmþ" çóñtèxt).</message>
+	<message key="rt.admin.searches.edit.editSearch">Éðît ßèårçh</message>
+	<message key="rt.admin.searches.confirmDelete">Ærè ýóü þürè ýóü wîþh tó ðèlètè thîþ ßèårçh?</message>
+	<message key="rt.admin.searches.createSearch">Çrèåtè ßèårçh</message>
+	<message key="rt.admin.validateUrls">Vålîðåtè ÜRLþ</message>
+	<message key="rt.admin.validateUrls.description"><![CDATA[Póþþîblý îñvålîð ÜRLþ fór þèårçh þîtèþ årè ðîþplåýèð bèlów.<br/>
+Ýóü þhóülð måñüållý vèrîfý åñý ÜRLþ mårkèð åþ îñvålîð, åþ thîþ tèþt îþ ñót 100% åççüråtè.<br/>
+Vålîðåtîóñ måý fåîl óñ þèårçh ÜRLþ thåt rèqüîrè póþtèð fórm ðåtå.]]></message>
+	<message key="rt.admin.validateUrls.validate">Vålîðåtè</message>
+	<message key="rt.admin.validateUrls.urlIsInvalid">{$url} îþ ñót vålîð.</message>
+	<message key="rt.admin.validateUrls.ok">ÒK</message>
+	<message key="rt.admin.validateUrls.complete">Vålîðåtîóñ çómplètè.</message>
+	<message key="rt.version">Vèrþîóñ</message>
+	<message key="rt.versions">Vèrþîóñþ</message>
+	<message key="rt.version.title">Tîtlè</message>
+	<message key="rt.version.locale">Lóçålè</message>
+	<message key="rt.version.key">Kèý</message>
+	<message key="rt.version.description">Ðèþçrîptîóñ</message>
+	<message key="rt.context">Çóñtèxt</message>
+	<message key="rt.contexts">Çóñtèxtþ</message>
+	<message key="rt.context.title">Tîtlè</message>
+	<message key="rt.context.abbrev">Æbbrèv</message>
+	<message key="rt.context.description">Ðèþçrîptîóñ</message>
+	<message key="rt.context.order">Òrðèr</message>
+	<message key="rt.search">ßèårçh</message>
+	<message key="rt.searches">ßèårçhèþ</message>
+	<message key="rt.search.title">Tîtlè</message>
+	<message key="rt.search.url">ÜRL</message>
+	<message key="rt.search.order">Òrðèr</message>
+	<message key="rt.search.description">Ðèþçrîptîóñ</message>
+	<message key="rt.search.searchUrl">ßèårçh ÜRL</message>
+	<message key="rt.search.searchPost">Póþt ðåtå</message>
+	<message key="rt.forThisRecord">Fór thîþ rèçórð</message>
+	<message key="rt.relatedItems">Fîñð rèlåtèð îtèmþ åmóñg</message>
+	<message key="rt.context.searchTerms">ßèårçh Tèrmþ</message>
+	<message key="rt.context.termToDefine">Wórð tó ðèfîñè</message>
+	<message key="rt.context.searchDescription">Thè þèårçh tèrmþ çåñ bè åltèrèð ór ðèlètèð bý thè rèåðèr; twó ór thrèè þhórt, prèçîþè tèrmþ ór phråþèþ próðüçèð thè bèþt Bóólèåñ (ÆÑÐ) þèårçhèþ. Tó lèårñ mórè åbóüt thè rèþóürçèþ þèårçhèð, çlîçk óñ ÆBÒÜT. Thèþè rèþóürçèþ håvè bèèñ þèlèçtèð fór thèîr rèlèvåñçè åñð ópèñ (frèè) åççèþþ tó åll ór pårt óf thèîr çóñtèñtþ.</message>
+	<message key="rt.context.defineTermsDescription">Ðóüblè çlîçk óñ åñý wórð îñ thè tèxt åñð ît wîll åppèår îñ thè Wórð-tó-Ðèfîñè bóx. Ýóü çåñ ålþó týpè ór påþtè å wórð îñtó thè bóx. Thèñ üþè thè þèårçh füñçtîóñ tó fîñð å ðèfîñîtîóñ fór thè wórð. Tó lèårñ mórè åbóüt thè rèþóürçè þèårçhèð, çlîçk óñ thè îñfórmåtîóñ þýmból. Thèþè rèþóürçèþ håvè bèèñ þèlèçtèð bèçåüþè óf thèîr rèlèvåñçè åñð thèîr ópèñ (frèè) åççèþþ tó åll ór pårt óf thèîr çóñtèñtþ.</message>
+	<message key="rt.context.authorTermsDescription">Fór îtèmþ wîth mórè thåñ óñè åüthór, lèåvè åll ñåmèþ çhèçkèð tó þèårçh fór þîmîlårlý çó-åüthórèð wórk, ór þèårçh óñè åt å tîmè bý çhèçkîñg óñlý å þîñglè ñåmè. Tó lèårñ mórè åbóüt thè rèþóürçè þèårçhèð, çlîçk óñ thè îñfórmåtîóñ þýmból. Thèþè rèþóürçèþ håvè bèèñ þèlèçtèð bèçåüþè óf thèîr rèlèvåñçè åñð thèîr ópèñ (frèè) åççèþþ tó åll ór pårt óf thèîr çóñtèñtþ.</message>
+	<message key="rt.context.citesContextDescription">Îf thè årtîçlè îþ îñðèxèð îñ Góóglè ßçhólår, ît måý bè åççómpåñîèð bý å "Çîtèð bý X" lîñk, whîçh lèåðþ tó å lîþt óf wórkþ thåt çîtè ît. Æþ wèll, Góóglè ßçhólår wîll lîþt åll îtèmþ qüótîñg thè tîtlè åñð åüthór. Tó åççèþþ óñlîñè rèþóürçèþ thåt årè óñlý åvåîlåblè thróügh ýóür rèþèårçh lîbrårý, ýóü måý bè åblè tó gó tó ßçhólår Prèfèrèñçèþ îñ Góóglè ßçhólår åñð åçtîvåtè thè Lîbrårý Lîñkþ fór ýóür îñþtîtütîóñ.</message>
+	<message key="rt.context.and">ÆÑÐ</message>
+</locale>

@@ -128,7 +128,7 @@
 </div>
 <div class="separator"></div>
 
-<table class="listing" width="100%">
+<table class="listing" width="80%">
 	{foreach from=$searches item=search key=key name=searches}
 	<form name="search{$key+1}form" method="{if $search->getSearchPost()}post{else}get{/if}" action="{$search->getSearchUrl()|escape}">
 	{foreach from=$search->postParams item=postParam}

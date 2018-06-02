@@ -609,7 +609,7 @@
 			<search_description>Liszt, hosted by Topica, is a free service that allows you to find, manage and participate in email lists and discussion groups in humanities.</search_description>
 			<url>http://www.liszt.com/dir/?cid=0</url>
 			<search_url>http://lists.topica.com/search/?x=28&amp;y=5&amp;search_type=cat&amp;query={$formKeywords}</search_url>
-			
+
 		</search>
 	</context>
 	<context>

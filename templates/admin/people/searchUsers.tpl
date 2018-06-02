@@ -1,7 +1,7 @@
 {**
  * searchUsers.tpl
  *
- * Copyright (c) 2005-2012 Alec Smecher and John Willinsky
+ * Copyright (c) 2005-2010 Alec Smecher and John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * Search form for enrolled users.
@@ -43,7 +43,7 @@ function sortSearch(heading, direction) {
 
 <form method="post" name="submit" action="{url op="enrollSearch"}">
 	<input type="hidden" name="roleId" value="{$roleId|escape}"/>
-	<input type="hidden" name="sort" value="username"/>
+	<input type="hidden" name="sort" value="id"/>
 	<input type="hidden" name="sortDirection" value="ASC"/>
 	<select name="searchField" size="1" class="selectMenu">
 		{html_options_translate options=$fieldOptions selected=$searchField}

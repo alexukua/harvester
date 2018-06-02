@@ -26,10 +26,10 @@
 	{assign var="archiveImage" value=$archive->getSetting('archiveImage')}
 	{if $archiveImage}
 		<div class="archiveImage">
-			<a href="{url path=$archive->getArchiveId()}" class="action"><img src="{$publicFilesDir}/{$archiveImage.uploadName|escape:"url"}" {if $archiveImage.altText != ''}alt="{$archiveImage.altText|escape}"{else}alt="{translate key="archive.image"}"{/if} /></a>
+			<a href="{url path=$archive->getArchiveId()}" class="action"><img style="height: 50px;" 
+src="{$publicFilesDir}/{$archiveImage.uploadName|escape:"url"}" {if $archiveImage.altText != ''}alt="{$archiveImage.altText|escape}"{else}alt="{translate key="archive.image"}"{/if} /></a>
 		</div>
 	{/if}
-	</div>
 
 	<h3><a href="{url path=$archive->getArchiveId()}">{$archive->getTitle()|escape}</a></h3>
 
@@ -37,6 +37,7 @@
 		{$archive->getSetting('description')|strip_unsafe_html|nl2br}<br />
 		{translate key="browse.recordCount" count=$archive->getRecordCount()}
 	</p>
+	</div>
 {/iterate}
 
 {if $notFirstArchive}

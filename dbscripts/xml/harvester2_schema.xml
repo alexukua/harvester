@@ -242,7 +242,7 @@
 			<UNIQUE/>
 		</index>
 	</table>
-	
+
 	<!--
 	  *
 	  * TABLE email_templates_data
@@ -264,7 +264,7 @@
 		<field name="description" type="X"/>
 		<descr>Default data for email templates.</descr>
 	</table>
-	
+
 	<!--
 	  *
 	  * TABLE rt_versions

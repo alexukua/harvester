@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2012 sp1 (http://www.altova.com) by Baek (home) -->
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://eprints.zu.edu.ua/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsdl="http://eprints.zu.edu.ua/wsdl/" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" name="getEprintsService" targetNamespace="http://eprints.zu.edu.ua/wsdl/">
+	<types>
+		<schema xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://eprints.zu.edu.ua/wsdl/">
+			<complexType name="SomeObject">
+				<sequence>
+					<element name="someArray" maxOccurs="unbounded">
+						<complexType>
+							<sequence>
+								<element name="item"/>
+							</sequence>
+						</complexType>
+					</element>
+				</sequence>
+			</complexType>
+			<complexType name="ArrayOfItems">
+				<sequence>
+					<element name="ResourcesList" maxOccurs="unbounded">
+						<complexType>
+							<sequence>
+								<element name="title"/>
+								<element name="type"/>
+								<element name="abstract"/>
+								<element name="keywords"/>
+								<element name="CreatorsList" type="tns:SomeObject"/>
+								<element name="datecontr"/>
+								<element name="SubjectsList" type="tns:SomeObject"/>
+								<element name="relation" type="anyURI"/>
+								<element name="date" type="gYear"/>
+							</sequence>
+						</complexType>
+					</element>
+				</sequence>
+			</complexType>
+			<complexType name="ListId">
+				<sequence>
+					<element name="item" type="int" maxOccurs="unbounded"/>
+				</sequence>
+			</complexType>
+			<complexType name="creators">
+				<sequence>
+					<element name="name" type="xsd:string"/>
+				</sequence>
+			</complexType>
+			<complexType name="ArrayofID">
+				<sequence>
+					<element name="name" type="xsd:string"/>
+					<element name="id" type="xsd:string"/>
+				</sequence>
+			</complexType>
+			<complexType name="ArrayOfString">
+				<complexContent>
+					<restriction base="SOAP-ENC:Array">
+						<attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="string[]"/>
+					</restriction>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="getEprintsRequest">
+		<part name="listId" type="tns:ListId">
+			<documentation>input list id</documentation>
+		</part>
+	</message>
+	<message name="getEprintsResponse">
+		<part name="items" type="tns:ArrayOfItems"/>
+	</message>
+	<portType name="Eprints_PortType">
+		<operation name="getEprint">
+			<input message="tns:getEprintsRequest"/>
+			<output message="tns:getEprintsResponse"/>
+		</operation>
+	</portType>
+	<binding name="Eprints_Binding" type="tns:Eprints_PortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getEprint">
+			<soap:operation soapAction="urn:MetaDataServ#getEprint"/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:MetaDataServ"/>
+			</input>
+			<output>
+				<soap:body use="literal" namespace="urn:MetaDataServ"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="Eprints_Service">
+		<port name="Eprints_Port" binding="tns:Eprints_Binding">
+                    
+			<soap:address location="http://eprints.vl-software.com/cgi/soap/MetaDataServ.cgi"/>
+		</port>
+	</service>
+</definitions>

@@ -1,7 +1,7 @@
 {**
  * settings.tpl
  *
- * Copyright (c) 2005-2012 Alec Smecher and John Willinsky
+ * Copyright (c) 2005-2010 Alec Smecher and John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * Site settings form.
@@ -14,7 +14,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<form method="post" action="{url op="saveSettings"}" enctype="multipart/form-data">
+<form name="settings" method="post" action="{url op="saveSettings"}" enctype="multipart/form-data">
 {include file="common/formErrors.tpl"}
 <div id="general">
 <h3>{translate key="admin.settings.general"}</h3>
