@@ -12,6 +12,8 @@
  
 <locale name="uk_UA" full_name="Ukrainian">
 	<!-- Common Messages -->
+	<message key="plugins.harvesters.oai.protocolName">OAI</message>
+	<message key="plugins.harvesters.oai.archive.form.harvesterUrl">OAI URL посилання</message>
 	<message key="common.changesSaved">Ваші зміни були збережені.</message>
 	<message key="common.language">Мова</message>
 	<message key="common.languages">Мови</message>
@@ -209,6 +211,7 @@
 	<message key="user.noRoles.submitArchive">Надіслати архів</message>
 	<message key="user.noRoles.enableSubmitClosed">Реєстрація в якості архіву заявник в даний час відключена.</message>
 
+
 	<!-- Roles -->
 	<message key="user.role.siteAdmin">Адміністратор сайту</message>
 	<message key="user.role.submitter">Archive Manager</message>
@@ -354,6 +357,7 @@
 	<message key="admin.archives.manageArchives">Управління архівами</message>
 	<message key="admin.archives.noneCreated">Ні Створено</message>
 	<message key="admin.archives.form.titleRequired">Назва потрібно.</message>
+	<message key="admin.archives.form.archiveNotCreate">Перш ніж вантажити логотип, створіть будь-ласка початку архів</message>
 	<message key="admin.archives.form.urlRequired">URL поле є обов'язковим.</message>
 	<message key="admin.archives.form.publicArchiveIdExists">Інший архів вже існує з вказаної загальної ID архіву. Будь ласка, виберіть інше.</message>
 	<message key="admin.archives.form.url.description">наприклад http://www.yourarchive.com</message>

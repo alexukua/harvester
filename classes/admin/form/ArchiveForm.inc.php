@@ -95,17 +95,30 @@ class ArchiveForm extends Form {
 	}
 
 	function uploadArchiveImage() {
+
+
 		import('classes.file.PublicFileManager');
 		$fileManager = new PublicFileManager();
 
-		$archive =& $this->archive;
+		$archive = $this->archive;
+
+        if  (!$archive) {
+            $this->addError('publicArchiveId', __('admin.archives.form.archiveNotCreate'));
+            return false;
+        }
 
 		$type = $fileManager->getUploadedFileType('archiveImage');
 		$extension = $fileManager->getImageExtension($type);
-		if (!$extension) return false;
+
+		if (!$extension) {
+            return false;
+        }
 
 		$uploadName = 'archiveImage-' . (int) $archive->getArchiveId() . $extension;
-		if (!$fileManager->uploadSiteFile('archiveImage', $uploadName)) return false;
+		if (!$fileManager->uploadSiteFile('archiveImage', $uploadName)){
+            return false;
+        }
+
 
 		$filePath = $fileManager->getSiteFilesPath();
 		list($width, $height) = getimagesize($filePath . '/' . $uploadName);

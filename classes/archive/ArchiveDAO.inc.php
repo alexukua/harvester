@@ -205,8 +205,8 @@ class ArchiveDAO extends DAO {
 	 * @param $rangeInfo object
 	 * @return DAOResultFactory containing matching archives
 	 */
-	function &getArchives($onlyEnabled = true, $rangeInfo = null, $sortBy = null, $sortDirection = SORT_DIRECTION_ASC) {
-		$result =& $this->retrieveRange(
+	function getArchives($onlyEnabled = true, $rangeInfo = null, $sortBy = 'archive_id', $sortDirection = SORT_DIRECTION_ASC) {
+		$result = $this->retrieveRange(
 			'SELECT a.*,
 				u.username AS archive_manager
 			FROM archives a
@@ -215,6 +215,7 @@ class ArchiveDAO extends DAO {
 			($sortBy?(' ORDER BY ' . $this->getSortMapping($sortBy) . ' ' . $this->getDirectionMapping($sortDirection)) : ''),
 			false, $rangeInfo
 		);
+
 
 		$returner = new DAOResultFactory($result, $this, '_returnArchiveFromRow');
 		return $returner;
@@ -283,6 +284,7 @@ class ArchiveDAO extends DAO {
 	function getSortMapping($heading) {
 		switch ($heading) {
 			case 'title': return 'title';
+            case 'archive_id': return 'archive_id';
 			case 'url': return 'url';
 			case 'manager': return 'archive_manager';
 			case 'type': return '';

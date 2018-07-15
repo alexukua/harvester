@@ -45,6 +45,7 @@ class ZendSearchHandler extends Handler {
 		$plugin =& PluginRegistry::getPlugin('generic', ZEND_SEARCH_PLUGIN_NAME);
 		$isUsingSolr = $plugin->isUsingSolr();
 
+
 		if ($isUsingSolr) {
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_URL, $plugin->getSetting('solrUrl') . '/select');
@@ -117,6 +118,7 @@ class ZendSearchHandler extends Handler {
 				($rangeInfo?('&start=' . ($rangeInfo->getPage() * $itemsPerPage)):'')
 			);
 			$data = curl_exec($ch);
+//			var_dump($data);
 			$xmlParser = new XMLParser();
 			$result = null;
 			$numFound = 0;

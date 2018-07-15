@@ -242,7 +242,7 @@ class CrosswalkDAO extends DAO {
 	 * @param $schemas array
 	 * @return array
 	 */
-	function &getCrosswalksForSchemas($schemas) {
+	function getCrosswalksForSchemas($schemas) {
 		$params = array();
 		$schemaTableList = '';
 		$schemaWhereList = '';
@@ -254,7 +254,7 @@ class CrosswalkDAO extends DAO {
 			array_push($params, $schema->getSchemaId());
 			$schemaIndex++;
 		}
-		$result =& $this->retrieveRange(
+		$result = $this->retrieveRange(
 			'SELECT DISTINCT c.* FROM crosswalks c' . $schemaTableList . ' WHERE ' . $schemaWhereList . ' ORDER BY c.seq',
 			$params
 		);

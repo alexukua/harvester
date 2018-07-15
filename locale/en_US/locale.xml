@@ -400,6 +400,7 @@ You may optionally provide the user with a reason for disabling their account.</
 	<message key="admin.archives.form.urlRequired">The URL field is required.</message>
 	<message key="admin.archives.form.publicArchiveIdExists">Another archive already exists with the specified public archive ID. Please choose another.</message>
 	<message key="admin.archives.form.url.description">e.g. http://www.yourarchive.com</message>
+    <message key="admin.archives.form.archiveNotCreate">Firstly, create archive please</message>
 	<message key="admin.archives.form.publicArchiveId.description">This unique identifier can be used in URL-based searches to identify this archive.</message>
 	
 	<!-- Languages -->

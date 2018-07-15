@@ -40,7 +40,7 @@ class MysqlIndexSearchHandler extends Handler {
 	 */
 	function index() {
 		$this->validate();
-		list($crosswalks, $fields, $archives) = $this->setupTemplate();
+       list($crosswalks, $fields, $archives) = $this->setupTemplate();
 
 		$templateMgr =& TemplateManager::getManager();
 
@@ -53,7 +53,7 @@ class MysqlIndexSearchHandler extends Handler {
 		if (empty($archiveIds)) $archiveIds = null;
 		elseif (!is_array($archiveIds)) $archiveIds = array($archiveIds);
 
-		$plugin =& $this->getPlugin();
+		$plugin = $this->getPlugin();
 		$templateMgr->display($plugin->getTemplatePath() . 'search.tpl');
 	}
 
@@ -349,7 +349,8 @@ class MysqlIndexSearchHandler extends Handler {
 			// Multiple schema are being searched; use crosswalks.
 			$crosswalkDao =& DAORegistry::getDAO('CrosswalkDAO');
 			$crosswalks =& $crosswalkDao->getCrosswalksForSchemas($schemaList);
-			$crosswalks =& $crosswalks->toArray();
+		    $crosswalks =& $crosswalks->toArray();
+
 
 			foreach ($crosswalks as $crosswalk) switch ($crosswalk->getType()) {
 				case FIELD_TYPE_DATE:
