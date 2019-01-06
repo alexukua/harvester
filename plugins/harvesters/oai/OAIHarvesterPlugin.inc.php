@@ -221,12 +221,6 @@ class OAIHarvesterPlugin extends HarvesterPlugin {
 				$archiveForm->initData();
 				$archiveForm->readInputData();
 
-				$metadataMap = array(
-					'repositoryName' => 'title',
-					'adminEmail' => 'adminEmail',
-					'description' => 'description'
-				);
-
 				if ($metadata === false) {
 					foreach ($oaiHarvester->getErrors() as $error) {
 						$archiveForm->addError('harvesterUrl', $error);

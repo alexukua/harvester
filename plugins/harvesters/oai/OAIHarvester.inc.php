@@ -27,7 +27,7 @@ class OAIHarvester extends Harvester {
 	var $responseDate;
 
 	function OAIHarvester(&$archive) {
-		parent::Harvester($archive);
+		parent::__construct($archive);
 		if ($archive) $this->oaiUrl = $archive->getSetting('harvesterUrl');
 	}
 
@@ -152,7 +152,7 @@ class OAIHarvester extends Harvester {
 
 		$this->throttle();
 		$parser = new XMLParser();
-		$result =& $parser->parse($harvesterUrl);
+		$result = $parser->parse($harvesterUrl);
 		if (!$parser->getStatus()) {
 			foreach ($parser->getErrors() as $error) {
 				$this->addError($error);
@@ -169,10 +169,12 @@ class OAIHarvester extends Harvester {
 
 		$returner = array();
 		$identifyNode =& $result->getChildByName('Identify');
+        $url=parse_url($harvesterUrl);
+        $returner['title'] = $identifyNode->getChildByName(array('repositoryName', 'oai:repositoryName'))->getValue();
+        $returner['adminEmail'] = $identifyNode->getChildByName(array('adminEmail', 'oai:adminEmail'))->getValue();
+        $returner['description'] = $identifyNode->getChildByName(array('description', 'oai:description'))->getValue();
+        $returner['url'] = $url['scheme'].'://'.$url['host'];
 
-		$repositoryNameNode =& $identifyNode->getChildByName(array('repositoryName', 'oai:repositoryName')) && $returner['title'] = $repositoryNameNode->getValue();
-		$adminEmailNode =& $identifyNode->getChildByName(array('adminEmail', 'oai:adminEmail')) && $returner['adminEmail'] = $adminEmailNode->getValue();
-		$descriptionNode =& $identifyNode->getChildByName(array('description', 'oai:description')) && $returner['description'] = $descriptionNode->getValue();
 		$parser->destroy();
 		$result->destroy();
 		return $returner;
@@ -190,15 +192,21 @@ class OAIHarvester extends Harvester {
 
 		$this->throttle();
 		$parser = new XMLParser();
-		$result =& $parser->parse($harvesterUrl);
-		if (!$parser->getStatus()) {
+
+		$result = $parser->parse($harvesterUrl);
+
+		if (!$result){
+            $this->addError('Not valid harvest url'. $harvesterUrl);
+            return false;
+		}
+		if (!$parser->getStatus() ) {
 			foreach ($parser->getErrors() as $error) {
 				$this->addError($error);
 			}
 			return false;
 		}
 
-		if ($errorNode =& $result->getChildByName('error')) {
+		if ($errorNode = $result->getChildByName('error')) {
 			$this->addError ($errorNode->getValue());
 			return false;
 		}
@@ -254,6 +262,7 @@ class OAIHarvester extends Harvester {
 	 */
 	function updateRecords($params = array(), $resumptionToken = null, $recordOffset = 0) {
 		do {
+
 			// Allow the harvesting of multiple sets by looping through
 			if (isset($params['set']) && is_array($params['set'])) {
 				$count = 0;
@@ -273,16 +282,25 @@ class OAIHarvester extends Harvester {
 			if ($archive->getSetting('isStatic')) {
 				$harvestUrl = $this->oaiUrl;
 			} else {
+
 				$harvestingParams = array();
 				$harvestingParams['verb'] = $verb;
 				if ($resumptionToken !== null) {
 					$harvestingParams['resumptionToken'] = $resumptionToken;
 				} else {
 					$harvestingParams['metadataPrefix'] = $this->getMetadataFormat();
+
+
 					foreach (array('from', 'until') as $name) {
-						if (isset($params[$name]) && $params[$name] == 'now') {
+
+
+						if (isset($params[$name]) && isset($params['now'])) {
 							$params[$name] = date('Y-m-d');
-						} else if (isset($params[$name]) && $params[$name] == 'last') {
+						}
+
+
+
+						if (isset($params[$name]) && isset($params['last'])) {
 							$lastHarvested = $this->archive->getLastIndexedDate();
 							if (empty($lastHarvested)) {
 								unset($params[$name]);
@@ -291,6 +309,10 @@ class OAIHarvester extends Harvester {
 							}
 						}
 					}
+
+
+
+
 					foreach (array('set', 'from', 'until') as $name) {
 						if (isset($params[$name])) $harvestingParams[$name] = $params[$name];
 					}
