@@ -9,47 +9,49 @@
  * $Id$
  *}
 {strip}
-{assign var="pageTitle" value="navigation.browse"}
-{assign var="helpTopicId" value="index.browse"}
-{include file="common/header.tpl"}
+    {assign var="pageTitle" value="navigation.browse"}
+    {assign var="helpTopicId" value="index.browse"}
+    {include file="common/header.tpl"}
 {/strip}
 
-<br />
+<br/>
 
 {iterate from=archives item=archive}
-	{if !$notFirstArchive}
-		{assign var=notFirstArchive value=1}
-		<div id="archives">
-		&#187; <a href="{url path="all"}">{translate key="browse.browseAll"}</a><br/><br/>
-	{/if}
-	<div style="clear:left;">
-	{assign var="archiveImage" value=$archive->getSetting('archiveImage')}
-	{if $archiveImage}
-		<div class="archiveImage">
-			<a href="{url path=$archive->getArchiveId()}" class="action"><img style="height: 50px;" 
-src="{$publicFilesDir}/{$archiveImage.uploadName|escape:"url"}" {if $archiveImage.altText != ''}alt="{$archiveImage.altText|escape}"{else}alt="{translate key="archive.image"}"{/if} /></a>
-		</div>
-	{/if}
+{if !$notFirstArchive}
+{assign var=notFirstArchive value=1}
+<div id="archives">
+    &#187; <a href="{url path="all"}">{translate key="browse.browseAll"}</a><br/><br/>
+    {/if}
+    <div style="clear:left;">
+        {assign var="archiveImage" value=$archive->getSetting('archiveImage')}
+        {if $archiveImage}
+            <div class="archiveImage">
+                <a href="{url path=$archive->getArchiveId()}" class="action">
+                    <img style="height: 50px;"       src="{$publicFilesDir}/{$archiveImage.uploadName|escape:"url"}"
+                                                                                  {if $archiveImage.altText != ''}alt="{$archiveImage.altText|escape}"
+                                                                                  {else}alt="{translate key="archive.image"}"{/if} /></a>
+            </div>
+        {/if}
 
-	<h3><a href="{url path=$archive->getArchiveId()}">{$archive->getTitle()|escape}</a></h3>
+        <h3 class="titleArchive"><a href="{url path=$archive->getArchiveId()}">{$archive->getTitle()|escape}</a></h3> </br>
 
-	<p>
-		{$archive->getSetting('description')|strip_unsafe_html|nl2br}<br />
-		{translate key="browse.recordCount" count=$archive->getRecordCount()}
-	</p>
-	</div>
-{/iterate}
+        <p>
+            {$archive->getSetting('description')|strip_unsafe_html|nl2br}<br/>
+            {translate key="browse.recordCount" count=$archive->getRecordCount()}
+        </p>
+    </div>
+    {/iterate}
 
-{if $notFirstArchive}
-	</div>{* archives *}
+    {if $notFirstArchive}
+</div>{* archives *}
 {/if}
 
 <div style="clear:left;"></div>
 
 {if $archives->wasEmpty()}
-	<p>{translate key="admin.archives.noneCreated"}</p>
+    <p>{translate key="admin.archives.noneCreated"}</p>
 {else}
-	{page_info iterator=$archives}&nbsp;&nbsp;&nbsp;&nbsp;{page_links anchor="archives" name="archives" iterator=$archives}
+    {page_info iterator=$archives}&nbsp;&nbsp;&nbsp;&nbsp;{page_links anchor="archives" name="archives" iterator=$archives}
 {/if}
 
 {include file="common/footer.tpl"}

@@ -18,6 +18,7 @@
 switch ($op) {
 	case 'index':
 	case 'contact':
+    case 'sendemail':
 	case 'harvester':
 		define('HANDLER_CLASS', 'AboutHandler');
 		import('pages.about.AboutHandler');

@@ -61,7 +61,7 @@
 			</select>
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr valign="bottom">
 		<td class="label">{fieldLabel name="metadataFormat" key="plugins.harvesters.oai.archive.form.metadataFormat" required="true"}</td>
 		<td class="value">
 			{translate key="plugins.harvesters.oai.archive.form.refreshDescription"}<br/>

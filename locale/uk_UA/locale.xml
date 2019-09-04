@@ -214,13 +214,13 @@
 
 	<!-- Roles -->
 	<message key="user.role.siteAdmin">Адміністратор сайту</message>
-	<message key="user.role.submitter">Archive Manager</message>
+	<message key="user.role.submitter">Менеджер архівів</message>
 	<message key="user.role.submitters">Архів менеджерів</message>
 
 	<!-- Archive entity messages -->
 	<message key="archive.archives">Архів</message>
 	<message key="archive.title">Назва</message>
-	<message key="archive.image">Архів зображень</message>
+	<message key="archive.image">Логотип архіву</message>
 	<message key="archive.image.profileImageInvalid">Образ, не дійсні. Прийняті формати GIF, JPG, PNG і.</message>
 	<message key="archive.recordCount">Лічильник записів</message>
 	<message key="archive.url">URL</message>
@@ -355,7 +355,7 @@
 	<message key="admin.archives.addArchive">Додати Архів</message>
 	<message key="admin.archives.editArchive">Змінити Архів</message>
 	<message key="admin.archives.manageArchives">Управління архівами</message>
-	<message key="admin.archives.noneCreated">Ні Створено</message>
+	<message key="admin.archives.noneCreated">Нема доданих</message>
 	<message key="admin.archives.form.titleRequired">Назва потрібно.</message>
 	<message key="admin.archives.form.archiveNotCreate">Перш ніж вантажити логотип, створіть будь-ласка початку архів</message>
 	<message key="admin.archives.form.urlRequired">URL поле є обов'язковим.</message>

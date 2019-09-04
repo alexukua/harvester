@@ -1,7 +1,7 @@
 {**
  * archiveForm.tpl
  *
- * Copyright (c) 2005-2012 Alec Smecher and John Willinsky
+ * Copyright (c) 2005-2010 Alec Smecher and John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * Basic archive settings under site administration.
@@ -44,8 +44,8 @@ function selectHarvester() {
 // -->
 </script>
 
-<div id="archiveForm">
-<form name="archiveForm" method="post" action="{url op="updateArchive"}" enctype="multipart/form-data">
+<div>
+<form id="archiveForm" name="archiveForm" method="post" action="{url op="updateArchive"}" enctype="multipart/form-data">
 {if $archiveId}
 <input type="hidden" name="archiveId" value="{$archiveId}" />
 {/if}

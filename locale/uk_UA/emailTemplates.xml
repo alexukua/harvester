@@ -44,6 +44,7 @@ Thank you,
 {$principalContactSignature}</body>
 		<description>This email is sent to a newly registered user to welcome them to the system and provide them with a record of their username and password.</description>
 	</email_text>
+
 	<email_text key="USER_VALIDATE">
 		<subject>Validate Your Account</subject>
 		<body>{$userFullName}
@@ -56,6 +57,18 @@ Thank you,
 {$principalContactSignature}</body>
 		<description>This email is sent to a newly registered user to welcome them to the system and provide them with a record of their username and password.</description>
 	</email_text>
+
+	<email_text key="CONTACT_FORM">
+		<subject>Контактна форма</subject>
+		<body>Шановний {$username}
+			Дякуємо за Ваше звернення: {$message}
+			Ваш телефон: {$phone}
+			Ми взяжемося з Вами найближчим часом
+			З найкращими побажаннями
+			{$principalContactSignature}</body>
+		<description>This email is sent to a newly registered user to welcome them to the system and provide them with a record of their username and password.</description>
+	</email_text>
+
 	<email_text key="NEW_ARCHIVE_NOTIFY">
 		<subject>Archive Added: {$archiveTitle}</subject>
 		<body>A new archive, "{$archiveTitle}", has been submitted for addition to {$siteTitle}. To index this archive, log in at {$loginUrl} or use the command-line harvester tool.</body>

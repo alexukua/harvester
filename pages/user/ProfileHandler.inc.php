@@ -95,12 +95,7 @@ class ProfileHandler extends UserHandler {
 		$this->validate();
 
 		import('classes.user.form.ChangePasswordForm');
-
-		if (checkPhpVersion('5.0.0')) { // WARNING: This form needs $this in constructor
-			$passwordForm = new ChangePasswordForm();
-		} else {
-			$passwordForm =& new ChangePasswordForm();
-		}
+		$passwordForm = new ChangePasswordForm();
 		$passwordForm->readInputData();
 
 		$this->setupTemplate(true);

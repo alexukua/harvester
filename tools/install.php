@@ -25,7 +25,7 @@ class HarvesterInstallTool extends InstallTool {
 	 * Constructor.
 	 * @param $argv array command-line arguments
 	 */
-	function HarvesterInstallTool($argv = array()) {
+	function __construct($argv = array()) {
 		parent::InstallTool($argv);
 	}
 
@@ -35,7 +35,7 @@ class HarvesterInstallTool extends InstallTool {
 	 * FIXME: Use readline if available?
 	 */
 	function readParams() {
-		AppLocale::requireComponents(array(LOCALE_COMPONENT_PKP_INSTALLER, LOCALE_COMPONENT_APPLICATION_COMMON, LOCALE_COMPONENT_PKP_USER));
+		AppLocale::requireComponents(LOCALE_COMPONENT_PKP_INSTALLER, LOCALE_COMPONENT_APPLICATION_COMMON, LOCALE_COMPONENT_PKP_USER);
 		printf("%s\n", __('installer.harvester2Installation'));
 
 		parent::readParams();

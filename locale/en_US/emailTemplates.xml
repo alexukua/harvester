@@ -61,4 +61,22 @@ Thank you,
 		<body>A new archive, "{$archiveTitle}", has been submitted for addition to {$siteTitle}. To index this archive, log in at {$loginUrl} or use the command-line harvester tool.</body>
 		<description>This email is sent to the site administrator to notify them about a new archive submission that needs to be indexed.</description>
 	</email_text>
+
+
+	<email_text key="CONTACT_FORM">
+		<subject>Validate Your Account</subject>
+		<body>{$username}
+
+			You have created an account, but before you can start using it, you need to validate your email account. To do this, simply follow the link below:
+
+
+			Телефон: {$phone}
+
+			Повідомлення: {$message}
+
+			Thank you,
+		</body>
+		<description>This email is sent to a newly registered user to welcome them to the system and provide them with a record of their username and password.</description>
+	</email_text>
+
 </email_texts>

@@ -21,7 +21,7 @@ class CrosswalkDAO extends DAO {
 	/**
 	 * Constructor.
 	 */
-	function CrosswalkDAO() {
+	function __construct() {
 		parent::DAO();
 	}
 
@@ -247,6 +247,7 @@ class CrosswalkDAO extends DAO {
 		$schemaTableList = '';
 		$schemaWhereList = '';
 		$schemaIndex = 0;
+
 		foreach ($schemas as $schema) {
 			$schemaTableList .= ", raw_fields f$schemaIndex, crosswalk_fields cf$schemaIndex";
 			if (!empty($schemaWhereList)) $schemaWhereList .= ' AND ';
@@ -258,6 +259,8 @@ class CrosswalkDAO extends DAO {
 			'SELECT DISTINCT c.* FROM crosswalks c' . $schemaTableList . ' WHERE ' . $schemaWhereList . ' ORDER BY c.seq',
 			$params
 		);
+
+
 
 		$returner = new DAOResultFactory($result, $this, '_returnCrosswalkFromRow');
 		return $returner;

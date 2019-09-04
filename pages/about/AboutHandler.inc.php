@@ -17,6 +17,8 @@
 
 
 import('classes.handler.Handler');
+import('lib.pkp.classes.form.Form');
+
 
 class AboutHandler extends Handler {
 
@@ -24,8 +26,10 @@ class AboutHandler extends Handler {
 	 * Display about index page.
 	 */
 	function index() {
-		$this->setupTemplate();
-		$this->validate();
+        $this->validate();
+
+		$this->setupTemplate(true);
+
 
 		$templateMgr =& TemplateManager::getManager();
 
@@ -45,31 +49,69 @@ class AboutHandler extends Handler {
 		$this->validate();
 
 		$templateMgr =& TemplateManager::getManager();
-		if ($subclass) $templateMgr->assign('pageHierarchy', array(array('about', 'navigation.about')));
+		if ($subclass) {
+            $templateMgr->assign('pageHierarchy', array(array('about', 'navigation.about')));
+        }
 	}
 
 	/**
 	 * Display contact page.
 	 */
 	function contact() {
-		$this->validate();
+
+       	import('classes.user.form.ContactForm');
+        $contactForm = new ContactForm();
+
+        $contactForm->readInputData();
+        $contactForm->initData();
+
+    	$this->validate();
 
 		$this->setupTemplate(true);
 
-		$site =& Request::getSite();
-
 		$templateMgr =& TemplateManager::getManager();
+
 		$templateMgr->display('about/contact.tpl');
+
 	}
+
+
+    /**
+     * Save user's new password.
+     */
+    function sendEmail($args, $request) {
+        $this->setupTemplate($request, true);
+
+        $user = $request->getUser();
+        $site = $request->getSite();
+
+        import('classes.user.form.ContactForm');
+        $contactForm = new ContactForm($user, $site);
+        $contactForm->readInputData();
+
+        $this->setupTemplate($request, true);
+        $contactForm->execute($request);
+
+
+        if ($contactForm->validate()) {
+            if ($contactForm->execute($request)) {
+                $templateMgr =& TemplateManager::getManager();
+                $templateMgr->assign('send', 'true');
+                $templateMgr->display('about/contact.tpl');
+            }
+
+        } else {
+            $contactForm->display($args, $request);
+        }
+
+    }
 
 	/**
 	 * Display about the harvester page.
 	 */
 	function harvester() {
 		$this->validate();
-
 		$this->setupTemplate(true);
-
 		$templateMgr =& TemplateManager::getManager();
 		$templateMgr->display('about/harvester.tpl');
 	}

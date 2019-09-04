@@ -163,7 +163,7 @@ class AdminLanguagesHandler extends AdminHandler {
 			AppLocale::reloadLocale($locale);
 		}
 
-		$request->redirect('admin', 'languages');
+	$request->redirect('admin', 'languages');
 	}
 }
 

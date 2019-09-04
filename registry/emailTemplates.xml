@@ -15,4 +15,5 @@
 	<email key="USER_REGISTER" can_edit="1" can_disable="0"/>
 	<email key="USER_VALIDATE" can_edit="1" can_disable="0"/>
 	<email key="NEW_ARCHIVE_NOTIFY" can_edit="1" can_disable="1"/>
+	<email key="CONTACT_FORM" can_edit="1" can_disable="0"/>
 </emails>
