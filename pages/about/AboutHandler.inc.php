@@ -22,20 +22,27 @@ import('lib.pkp.classes.form.Form');
 
 class AboutHandler extends Handler {
 
-	/**
+	public function __construct()
+    {
+        $this->validate();
+        /**
+         * TODO check if  route is send form
+         */
+        import('classes.user.form.ContactForm');
+        $this->contactForm = new ContactForm();
+        $this->contactForm->readInputData();
+        $this->contactForm->initData();
+        parent::__construct();
+    }
+
+    /**
 	 * Display about index page.
 	 */
 	function index() {
-        $this->validate();
-
-		$this->setupTemplate(true);
-
-
+       	$this->setupTemplate(true);
 		$templateMgr =& TemplateManager::getManager();
-
 		$site =& Request::getSite();
 		$templateMgr->assign('about', $site->getLocalizedSetting('about'));
-
 		$templateMgr->display('about/index.tpl');
 	}
 
@@ -45,33 +52,18 @@ class AboutHandler extends Handler {
 	 * @param $subclass boolean set to true if caller is below this handler in the hierarchy
 	 */
 	function setupTemplate($subclass = false) {
-		parent::setupTemplate();
-		$this->validate();
-
 		$templateMgr =& TemplateManager::getManager();
 		if ($subclass) {
             $templateMgr->assign('pageHierarchy', array(array('about', 'navigation.about')));
         }
+        parent::setupTemplate();
 	}
 
 	/**
 	 * Display contact page.
 	 */
-	function contact() {
-
-       	import('classes.user.form.ContactForm');
-        $contactForm = new ContactForm();
-
-        $contactForm->readInputData();
-        $contactForm->initData();
-
-    	$this->validate();
-
-		$this->setupTemplate(true);
-
-		$templateMgr =& TemplateManager::getManager();
-
-		$templateMgr->display('about/contact.tpl');
+	function contact($args, $request) {
+	       $this->contactForm->display($args, $request);
 
 	}
 
@@ -80,7 +72,13 @@ class AboutHandler extends Handler {
      * Save user's new password.
      */
     function sendEmail($args, $request) {
-        $this->setupTemplate($request, true);
+
+        $this->contactForm->validate();
+        $this->contactForm->execute($request);
+
+    	return $this->contact();
+
+      /*  $this->setupTemplate($request, true);
 
         $user = $request->getUser();
         $site = $request->getSite();
@@ -88,8 +86,6 @@ class AboutHandler extends Handler {
         import('classes.user.form.ContactForm');
         $contactForm = new ContactForm($user, $site);
         $contactForm->readInputData();
-
-        $this->setupTemplate($request, true);
         $contactForm->execute($request);
 
 
@@ -102,7 +98,7 @@ class AboutHandler extends Handler {
 
         } else {
             $contactForm->display($args, $request);
-        }
+        }*/
 
     }
 
@@ -110,7 +106,6 @@ class AboutHandler extends Handler {
 	 * Display about the harvester page.
 	 */
 	function harvester() {
-		$this->validate();
 		$this->setupTemplate(true);
 		$templateMgr =& TemplateManager::getManager();
 		$templateMgr->display('about/harvester.tpl');

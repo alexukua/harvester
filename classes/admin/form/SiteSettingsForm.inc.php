@@ -51,7 +51,7 @@ class SiteSettingsForm extends PKPSiteSettingsForm {
 
 	/**
 	 * Uploads an image.
-	 * @param $settingName string setting key associated with the file
+	 * @param $settingName StringUtils setting key associated with the file
 	 */
 	function uploadImage($settingName) {
 		$site =& Request::getSite();
@@ -88,7 +88,7 @@ class SiteSettingsForm extends PKPSiteSettingsForm {
 
 	/**
 	 * Deletes an image.
-	 * @param $settingName string setting key associated with the file
+	 * @param $settingName StringUtils setting key associated with the file
 	 */
 	function deleteImage($settingName) {
 		$site =& Request::getSite();
@@ -121,7 +121,7 @@ class SiteSettingsForm extends PKPSiteSettingsForm {
 
 	/**
 	 * Uploads custom stylesheet.
-	 * @param $settingName string setting key associated with the file
+	 * @param $settingName StringUtils setting key associated with the file
 	 */
 	function uploadStyleSheet($settingName) {
 		$site =& Request::getSite();

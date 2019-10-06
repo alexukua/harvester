@@ -11,13 +11,12 @@ class ContactForm extends Form
         import('lib.pkp.classes.captcha.CaptchaManager');
         $captchaManager = new CaptchaManager();
         $this->captchaEnabled = ($captchaManager->isEnabled() && Config::getVar('captcha', 'captcha_on_register')) ? true : false;
-
         // Validation checks for this form
         $this->addCheck(new FormValidator($this, 'username', 'required', 'admin.settings.form.contactNameRequired'));
         $this->addCheck(new FormValidatorEmail($this, 'contactemail', 'required', 'admin.settings.form.contactEmailRequired'));
         $this->addCheck(new FormValidator($this, 'message', 'required', 'user.profile.form.contactmessageRequired'));
         if ($this->captchaEnabled) {
-          //  $this->addCheck(new FormValidatorCaptcha($this, 'captcha', 'captchaId', 'common.captchaField.badCaptcha'));
+            $this->addCheck(new FormValidatorCaptcha($this, 'captcha', 'captchaId', 'common.captchaField.badCaptcha'));
         }
 
     }
@@ -27,6 +26,16 @@ class ContactForm extends Form
      * Display the form.
      */
     function display() {
+        $templateMgr =& TemplateManager::getManager();
+        if ($this->captchaEnabled) {
+            import('lib.pkp.classes.captcha.CaptchaManager');
+            $captchaManager = new CaptchaManager();
+            $captcha = $captchaManager->createCaptcha();
+            if ($captcha) {
+                $templateMgr->assign('captchaEnabled', $this->captchaEnabled);
+                $this->setData('captchaId', $captcha->getId());
+            }
+        }
          parent::display();
     }
 
