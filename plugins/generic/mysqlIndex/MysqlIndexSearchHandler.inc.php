@@ -25,7 +25,7 @@ class MysqlIndexSearchHandler extends Handler
      */
     function __construct()
     {
-        parent::Handler();
+        parent::__construct();
     }
 
     /**

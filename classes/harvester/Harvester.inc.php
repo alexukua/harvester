@@ -164,8 +164,8 @@ class Harvester {
 	}
 
 	function _insertRecord($identifier, &$contents) {
-		$schemaPlugin =& $this->getSchemaPlugin();
-		$schema =& $this->getSchema();
+		$schemaPlugin =$this->getSchemaPlugin();
+		$schema =$this->getSchema();
 		$schemaId = $schema->getSchemaId();
 
 		$record = new Record();

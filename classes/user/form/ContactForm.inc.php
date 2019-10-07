@@ -18,14 +18,15 @@ class ContactForm extends Form
         if ($this->captchaEnabled) {
             $this->addCheck(new FormValidatorCaptcha($this, 'captcha', 'captchaId', 'common.captchaField.badCaptcha'));
         }
-
+        $this->addCheck(new FormValidatorPost($this));
     }
 
 
     /**
      * Display the form.
      */
-    function display() {
+    function display()
+    {
         $templateMgr =& TemplateManager::getManager();
         if ($this->captchaEnabled) {
             import('lib.pkp.classes.captcha.CaptchaManager');
@@ -36,25 +37,30 @@ class ContactForm extends Form
                 $this->setData('captchaId', $captcha->getId());
             }
         }
-         parent::display();
+        parent::display();
     }
 
     /**
-     * Assign form data to user-submitted data.
+     * Assign form data to contact -submitted data.
      */
     function readInputData()
     {
-        $this->readUserVars(array(
+        $contactVars = array(
             'username',
             'contactemail',
             'message',
-            'phone'
-        ));
-
+            'phone',
+        );
+        if ($this->captchaEnabled) {
+            $contactVars[] = 'captchaId';
+            $contactVars[] = 'captcha';
+        }
+        $this->readUserVars($contactVars);
     }
 
 
-    function execute() {
+    function execute()
+    {
         $site =& Request::getSite();
         import('classes.mail.MailTemplate');
         $mail = new MailTemplate('CONTACT_FORM');
@@ -67,7 +73,7 @@ class ContactForm extends Form
         ));
         $mail->addRecipient($this->getData('contactemail'), $this->getData('username'));
         $mail->addBcc($site->getLocalizedContactEmail(), $site->getLocalizedContactName());
-        if ($mail->send()){
+        if ($mail->send()) {
             return true;
         }
         unset($mail);

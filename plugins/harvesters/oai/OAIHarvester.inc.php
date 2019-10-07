@@ -15,6 +15,7 @@
  */
 
 import('classes.harvester.Harvester');
+import('lib.pkp.classes.core.StringUtils');
 
 class OAIHarvester extends Harvester
 {
@@ -457,7 +458,9 @@ class OAIHarvester extends Harvester
         $metadataContainerChildren = $metadataContainerNode->getChildren();
         $metadataNode =& $metadataContainerChildren[0];
 
+
         $record = $this->getRecordByIdentifier($identifier);
+
         if (is_object($metadataNode)) {
             $xml = $metadataNode->toXml();
             if (!$record) {
@@ -468,6 +471,8 @@ class OAIHarvester extends Harvester
             }
         }
     }
+
+
 
     /**
      * Return a UTC-formatted datestamp from the specified UNIX timestamp.

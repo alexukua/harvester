@@ -31,7 +31,7 @@ class RegistrationForm extends Form {
 	/**
 	 * Constructor.
 	 */
-	function RegistrationForm() {
+	function __construct() {
 		parent::Form('user/register.tpl');
 
 		import('lib.pkp.classes.captcha.CaptchaManager');

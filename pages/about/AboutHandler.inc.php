@@ -73,32 +73,12 @@ class AboutHandler extends Handler {
      */
     function sendEmail($args, $request) {
 
-        $this->contactForm->validate();
-        $this->contactForm->execute($request);
+        if ($this->contactForm->validate()) {
+            $this->contactForm->execute($request);
+        }
 
     	return $this->contact();
 
-      /*  $this->setupTemplate($request, true);
-
-        $user = $request->getUser();
-        $site = $request->getSite();
-
-        import('classes.user.form.ContactForm');
-        $contactForm = new ContactForm($user, $site);
-        $contactForm->readInputData();
-        $contactForm->execute($request);
-
-
-        if ($contactForm->validate()) {
-            if ($contactForm->execute($request)) {
-                $templateMgr =& TemplateManager::getManager();
-                $templateMgr->assign('send', 'true');
-                $templateMgr->display('about/contact.tpl');
-            }
-
-        } else {
-            $contactForm->display($args, $request);
-        }*/
 
     }
 
