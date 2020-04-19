@@ -1,9 +1,9 @@
-config.inc.php
+/config.inc.php
 .DS_Store
 .project
 .settings
 .buildpath
 .htaccess
 .idea/
-cache
+/cache
 new_harvester
