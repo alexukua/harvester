@@ -19,6 +19,7 @@
 
 
 /**
+ *
  * Basic initialization (pre-classloading).
  */
 
