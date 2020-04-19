@@ -1,0 +1,611 @@
+/**
+ * common.css
+ *
+ * Copyright (c) 2005-2010 Alec Smecher and John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * Site-wide shared stylesheet.
+ *
+ * $Id$
+ */
+
+/**
+ * Common HTML elements
+ */
+
+
+
+a {
+	text-decoration: underline;
+}
+
+a:link {
+	color: #18605A;
+}
+
+a:active {
+	color: #3C9FA6;
+}
+
+a:visited {
+	color: #18605A;
+}
+
+a:hover {
+	color: #3C9FA6;
+	text-decoration: none;
+}
+
+
+
+input.defaultButton {
+	background-color: #18605A;
+	color: #FFF;
+	border-top: 1px #CCC solid;
+	border-left: 1px #999 solid;
+	border-bottom: 1px #333 solid;
+	border-right: 1px #000 solid;
+}
+
+/**
+ * Basic record layout styles
+ */
+.title {
+	color: #18605A;
+	font-weight: bold
+}
+
+.recordContents {
+	padding-left: 1em;
+	padding-bottom: 1em;
+}
+
+/**
+ * Main layout elements
+ */
+
+/*#container {
+	min-width: 750px !important;
+}
+
+#footer {
+	background-color: #ABA;
+}
+
+#body {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+#main {
+	width: 100%;
+}   */
+
+#archiveImage img {
+	display: block;
+	margin: 0 auto;
+	border: 0;
+	text-align: center;
+}
+
+
+/**
+ * Navigation bar
+ */
+
+#navbar a {
+	font-size: 0.65em;
+	letter-spacing: 0.05em;
+	color:#fff;   FONT-WEIGHT:BOLD;
+
+
+}
+
+#navbar a:link {  FONT-WEIGHT:BOLD;
+}
+
+#navbar a:active {  FONT-WEIGHT:BOLD;
+}
+
+#navbar a:visited {  FONT-WEIGHT:BOLD;
+}
+
+#navbar a:hover {                        /*///////////////////////////////////////////////////////*/
+  color:#f9af2e;FONT-WEIGHT:BOLD;
+
+}
+
+
+/**
+ * Table styles
+ */
+
+table.listing tr.highlight {
+	background: yellow;
+}
+
+
+/**
+ * Other organizational elements
+ */
+
+li.pluginManaged {
+	color: green;
+}
+
+div.progressbar {
+	background-image: url(../templates/images/progbg.gif);
+	background-repeat: no-repeat;
+	height: 27px;
+	width: 505px;
+	z-index:1;
+}
+/*----------------------------seeeeeeeeeeeeeeeeeeeeeeepaaaaaaaaaaaaaaaraaaaaaaaaaaaaateeeeeeeeeeeeeeeeeee-----------------------------*/
+body {min-width:640px;
+
+	                  /*///////////////////////////////////////////////////////*/
+	margin: 0;
+	padding: 0;
+	background: repeat-x  #0d093e;
+	color: #111;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+div {
+	text-align: left;
+}
+
+table {
+	border: 0;
+	border-spacing: 0;
+	font-size: 1.0em;
+}
+
+form {
+	margin: 0;
+}
+
+a {
+	text-decoration: underline;
+}
+
+a.plain {
+	text-decoration: none;
+}
+
+ul {
+	margin: 0.25em 0 0.75em 0;
+	padding: 0 0 0 2.5em;
+}
+
+tt {
+	font-size: 1.25em;
+}
+
+label {
+}
+
+label.error {
+	color: #900;
+}
+
+input.textField, select.selectMenu, textarea.textArea, input.uploadField {
+	background-color: #F0F0E8;
+	color: #000;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	border-top: 2px solid #666;
+	border-left: 2px solid #666;
+	border-bottom: 2px solid #E8E8E1;
+	border-right: 2px solid #E8E8E1;
+	font-size: 1em;
+}
+
+input.button {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	background-color: #E8E8E1;
+	font-size: 1em;
+}
+
+input.defaultButton {
+	background-color: #375;
+	color: #FBFBF3;
+	font-weight: bold;
+}
+
+
+/**
+ * Main layout elements
+ */
+
+#container {
+	width: 100% !important;
+	min-width: 730px !important;
+	margin: 0px auto;
+	text-align: center;
+}
+
+#header {margin-left:4%;
+	padding: 0;
+	width: 90% ;                         /*///////////////////////////////////////////////////////*/
+	margin: 0 auto;
+	text-align: left;
+}
+
+#headerTitle {
+	text-align: left !important;
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+}
+
+#header h1 {
+	margin: 0 auto;
+	padding: 0.5em 0 0.25em 10%;
+	font-family: Georgia,'Times New Roman',Times,serif;
+	font-weight: normal;
+}
+
+#footer {
+	padding-left: 65px;                      /*///////////////////////////////////////////////////////*/
+	width: 90%;
+
+	text-align: left;
+	font-size: 0.7em;
+
+}
+
+#footerContent {
+	width: 100%;
+	margin: 0 auto;
+	padding-left: 10%;
+}
+   #body {
+	width: 90%;                                        /*///////////////////////////////////////////////////////*/
+	min-height: 330px;
+	margin: 0 auto;
+	background-color: #FFF;
+	position:relative;                       /*///////////////////////////////////////////////////////*/
+	padding: 0px;
+}
+#main {
+	padding: 0em 0em 2em 0em;
+}
+
+#main h2 {                                          /*///////////////////////////////////////////////////////*/
+	margin: 0em 0em 0.5em 0.5em;
+	padding-top: 0.5em;
+	font-family: Georgia,'Times New Roman',Times,serif;
+	font-weight: normal;
+	line-height: 130%;
+}
+
+#main h3 {
+	margin: 1em 1em 0.5em 1em;
+	padding-top: 0em;
+	font-family: Georgia,'Times New Roman',Times,serif;
+	font-weight: normal;
+}
+
+#navbar {
+	margin-right: 0;                                      /*///////////////////////////////////////////////////////*/
+	padding-bottom: 0em;
+	border-bottom: 3px solid #0d093e;
+	padding-left: 10px;
+
+
+
+}
+
+#breadcrumb {
+	padding-top: 1em;
+	font-size: 0.7em;padding-left: 15px;                       /*///////////////////////////////////////////////////////*/
+}
+
+#content {
+	margin: 0;
+    width: 75%;
+	margin-bottom:150px;
+	padding-top: 0.5em;
+	font-size: 0.7em;
+	border-top: 1px dotted #aaaaaa;
+	padding-left: 15px;                         /*///////////////////////////////////////////////////////*/
+}
+
+
+#content h3 {
+	margin: 0em 1em 0.25em 0em;
+	padding-top: 0.75em;
+	font-family: Georgia,'Times New Roman',Times,serif;
+	font-weight: normal;
+	font-size: 1.8em;
+}
+
+#content h4 {
+	margin: .75em 1em 0.25em 0em;
+	font-family: Georgia,'Times New Roman',Times,serif;
+	font-weight: normal;
+	font-size: 1.5em;
+}
+
+#content h5 {
+	margin: 0em 1em 0.25em 0em;
+	padding-top: 0.75em;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+
+/**
+ * Breadcrumbs
+ */
+
+#breadcrumb a {
+	text-decoration: none;
+}
+
+#breadcrumb a.current {
+	font-weight: bold;
+}
+
+
+/**
+ * Footer elements
+ */
+
+#footer div.debugStats {
+	font-size: 0.6em;
+}
+
+
+/**
+ * Additional text styles
+ */
+
+span.disabled, label.disabled {
+	color: #666;
+}
+
+a.action, a.file {
+	font-size: 0.85em;
+	text-transform: uppercase;
+}
+
+a.icon {
+	text-decoration: none;
+}
+
+a.icon img {
+	border: 0;
+}
+
+a.icon:hover {
+	background: none;
+}
+
+span.formRequired {
+	color: #333;
+	font-size: 0.9em;
+}
+
+span.instruct {
+}
+
+span.heading {
+	font-size: 0.85em;
+	text-transform: uppercase;
+}
+
+span.highlight {
+	border-bottom: 1px dotted #000;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+/**
+ * Table styles
+ */
+
+table.info td {
+	padding: 0;
+	padding-bottom: 0.5em;
+	padding-right: 0.5em;
+}
+
+table.listing td {
+	padding: 0.25em 1.5em 0.25em 0.5em;
+}
+
+table.listing tr.heading td, table.listing td.heading, table.info td.heading {
+	font-size: 0.85em;
+	text-transform: uppercase;
+	font-weight: normal;
+	padding: 0.75em 1.5em 1em 0.5em;
+}
+
+table.info td.heading {
+	padding-left: 0;
+}
+
+
+table.listing td.nodata, table.info td.nodata {
+	text-align: center;
+	font-style: italic;
+}
+
+table.listing td.headseparator {
+	border-top: 1px dotted #000;
+	font-size: 0.1em;
+	line-height: 1%;
+}
+
+table.listing td.endseparator {
+	border-top: 1px dotted #000;
+	font-size: 0.25em;
+	line-height: 10%;
+}
+
+table.listing td.separator, table.info td.separator {
+	border-top: 1px dotted #DDDDD0;
+	font-size: 0.1em;
+	line-height: 1%;
+}
+
+table.data tr {
+}
+
+table.data td {
+	padding-bottom: 0.25em;
+}
+
+table.data td.label {
+	padding-right: 1em;
+}
+
+table.data td.value {
+}
+
+table.data td.separator {
+	padding: 0.5em;
+	font-size: 0.1em;
+	line-height: 1%;
+}
+
+table.data td.heading {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+table.nested tr {
+	padding: 0;
+	margin: 0;
+}
+
+span.nested {
+	padding: 0 4px 0 0;
+	font-size: 1.2em;
+}
+
+/**
+ * Form-specific elements
+ */
+
+span.formError {
+	color: #900;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+span.formSuccess {
+	color: #090;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+ul.formErrorList {
+	color: #900;
+}
+
+
+/**
+ * Other organizational elements
+ */
+
+ul.menu {
+	margin: 0;
+	padding: 0;
+	padding-bottom:2px;
+	             /*////////////////////////////////////// */
+}
+                                  /*////////////////////////////////////// */
+ul.menu li {  background: url(gr_.jpg) repeat-x  #333;
+
+	margin: 3px 1px;
+	padding:4px;
+	padding-right: 0.5em;
+	padding-left: 0.5em;
+	display: inline;
+}
+ul.menu li:HOVER {background: url(gr_hover_.jpg) repeat-x  #333;                    /*////////////////////////////////////// */
+	margin: 3px 1px;
+	padding:4px;
+	padding-right: 0.5em;
+	padding-left: 0.5em;
+	display: inline;
+}
+
+ul.menu li.current {
+	font-weight: bold;
+}
+
+ul.menu a {
+	font-size: 0.85em;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+ul.steplist {
+	margin: 0;
+	padding: 0;
+	list-style-type: decimal;
+}
+
+ul.steplist li {
+	margin: 0;
+	padding: 0;
+	font-size: 0.85em;
+	padding-right: 0.5em;
+	display: inline;
+	text-transform: uppercase;
+}
+
+ul.steplist li.current {
+	font-weight: bold;
+}
+
+ul.steplist a {
+	text-decoration: none;
+}
+
+ul.plain {
+	list-style-type: none;
+	padding-left: 1.5em;
+}
+
+ul.filter {
+	margin: 0;
+	padding: 1.5em 0 1.5em 0;
+	list-style-type: none;
+}
+
+ul.filter li {
+	padding-right: 1.5em;
+	display: inline;
+}
+
+
+/**
+ * Other organizational elements
+ */
+
+div.separator {
+	width: 100%;
+	margin-top: 1em;
+	margin-bottom: 0.25em;
+	padding: 0;
+	border-bottom: 1px dotted #000;
+	font-size: 0.5em;
+	line-height: 25%;
+}
+#lefttop{top:0px;left:0px;background:url(lefttop.jpg) top left no-repeat;width:16px;height:14px;padding:0px;}                              /*////////////*/
+#righttop{float:right;top:0px;right:0px;background:url(righttop.jpg) right top no-repeat;width:16px;height:10px;position:absolute}
+
+#leftbottom{position:absolute;bottom:0px;left:0px;background:url(leftbottom.jpg) left bottom no-repeat;width:16px;height:14px;padding:0px}                              /*////////////*/
+#rightbottom{bottom:0;float:right;right:0px;background:url(rightbottom.jpg) right bottom no-repeat;width:16px;height:10px;position:absolute}
+
+
+#left{top:0px;left:0px;float:left;background:url(left.gif);width:19px;height:18px;}
+#right{margin:0px;top:0px;right:0px;float:right;background:url(right.gif);width:19px;height:19px;}
+#bleft{bottom:0px;left:0px;float:left;background:url(bleft.gif);width:19px;height:19px;}
+#bright{bottom:0px;right:0px;float:right;background:url(bright.gif);width:19px;height:19px;}
