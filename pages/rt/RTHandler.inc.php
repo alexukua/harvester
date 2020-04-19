@@ -31,12 +31,12 @@ class RTHandler extends Handler {
 		$contextId = array_shift($args);
 
 		$this->validate($recordId);
-		$archive =& $this->archive;
-		$record =& $this->record;
+		$archive = $this->archive;
+		$record = $this->record;
 		$this->setupTemplate();
 
 		$rtDao =& DAORegistry::getDAO('RTDAO');
-		$context =& $rtDao->getContext($contextId);
+		$context = $rtDao->getContext($contextId);
 
 		if (!$context) {
 			Request::redirect('index');
@@ -105,12 +105,12 @@ class RTHandler extends Handler {
 
 	function getParameterNames($value) {
 		$matches = null;
-		String::regexp_match_all('/\{\$([a-zA-Z0-9]+)\}/', $value, $matches);
+		StringUtils::regexp_match_all('/\{\$([a-zA-Z0-9]+)\}/', $value, $matches);
 		// Remove the entire string from the matches list
 		return $matches[1];
 	}
 
-	function validate($recordId) {
+		function validate($recordId) {
 		$returner = array();
 
 		$recordDao =& DAORegistry::getDAO('RecordDAO');

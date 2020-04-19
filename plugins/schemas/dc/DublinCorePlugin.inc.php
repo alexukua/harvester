@@ -174,7 +174,7 @@ class DublinCorePlugin extends SchemaPlugin {
 		foreach ($result->getChildren() as $child) {
 			$name = $child->getName();
 			$value = $child->getValue();
-			if (String::substr($name, 0, 3) == 'dc:') $name = String::substr($name, 3);
+			if (StringUtils::substr($name, 0, 3) == 'dc:') $name = StringUtils::substr($name, 3);
 			$returner[$name][] = $value;
 		}
 

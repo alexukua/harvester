@@ -295,16 +295,16 @@ class localeCheck extends CommandLineTool {
 	}
 
 	function truncate($value, $length = 80, $ellipsis = '...') {
-		if (String::strlen($value) > $length) {
-			$value = String::substr($value, 0, $length - String::strlen($ellipsis));
+		if (StringUtils::strlen($value) > $length) {
+			$value = StringUtils::substr($value, 0, $length - StringUtils::strlen($ellipsis));
 			return $value . $ellipsis;
 		}
 		return $value;
 	}
 
 	function checkLengths($reference, $value) {
-		$referenceLength = String::strlen($reference);
-		$length = String::strlen($value);
+		$referenceLength = StringUtils::strlen($reference);
+		$length = StringUtils::strlen($value);
 		$lengthDifference = abs($referenceLength - $length);
 		if ($referenceLength == 0) return false;
 		if ($lengthDifference / $referenceLength > 1 && $lengthDifference > 10) return false;
@@ -319,7 +319,7 @@ class localeCheck extends CommandLineTool {
 	 */
 	function getParameterNames($source) {
 		$matches = null;
-		String::regexp_match_get('/({\$[^}]+})/' /* '/{\$[^}]+})/' */, $source, $matches);
+		StringUtils::regexp_match_get('/({\$[^}]+})/' /* '/{\$[^}]+})/' */, $source, $matches);
 		array_shift($matches); // Knock the top element off the array
 		return $matches;
 	}
